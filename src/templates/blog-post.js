@@ -1,21 +1,23 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
+export default ({ data, pageContext, location }) => {
+  const { title } = useSiteMetadata()
+  const { frontmatter, excerpt, body } = data.mdx
   const { previous, next } = pageContext
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={title}>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={frontmatter.title}
+        description={frontmatter.description || excerpt}
       />
       <article>
         <header>
@@ -25,7 +27,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               marginBottom: 0,
             }}
           >
-            {post.frontmatter.title}
+            {frontmatter.title}
           </h1>
           <p
             style={{
@@ -34,10 +36,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               marginBottom: rhythm(1),
             }}
           >
-            {post.frontmatter.date}
+            {frontmatter.date}
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MDXRenderer>{body}</MDXRenderer>
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -78,23 +80,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   )
 }
 
-export default BlogPostTemplate
-
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
+    mdx(fields: { slug: { eq: $slug } }) {
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY MMMM Do")
         description
+        category
       }
     }
   }

@@ -1,7 +1,11 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
+date: "2020-05-01T22:12:03.284Z"
 description: "Hello World"
+category: "post"
+tags: ["nodejs", "scss"]
+featured: true
+published: true
 ---
 
 This is my first post on my new fake blog! How exciting!

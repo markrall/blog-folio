@@ -1,3 +1,11 @@
+## TODO
+
+[ ] Update post & folio navigation to only include items from each respective category
+
+[ ] Create linkable tag filters
+
+---
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">

@@ -1,6 +1,10 @@
 ---
 title: My Second Post!
-date: "2015-05-06T23:46:37.121Z"
+date: "2020-05-06T23:46:37.121Z"
+category: "post"
+tags: ["nodejs", "scss"]
+featured: true
+published: true
 ---
 
 Wow! I love blogging so much already.

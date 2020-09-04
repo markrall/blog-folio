@@ -1,22 +1,44 @@
-module.exports = {
-  siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
-    },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+// Initialize dotenv
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`, // or '.env'
+})
+
+const config = require("gatsby-plugin-config").default
+
+const siteMetadata = {
+  title: `productbymark.com`,
+  author: {
+    name: `Mark Rall`,
+    summary: `who lives and works in Melbourne, Australia building useful things.`,
   },
+  description: `Digital product design and development`,
+  siteUrl: `https://productbymark.com/`,
+  social: {
+    twitter: `productbymark`,
+  },
+}
+
+module.exports = {
+  siteMetadata: siteMetadata,
   plugins: [
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/portfolio`,
+        name: `portfolio`,
       },
     },
     {
