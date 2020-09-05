@@ -1,17 +1,20 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const _ = require(`lodash`)
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const tagTemplate = path.resolve(`./src/templates/tags.js`)
 
   return graphql(`
     query {
-      allMdx(
+      posts: allMdx(
         sort: { fields: [frontmatter___date], order: ASC }
         filter: {
           frontmatter: { published: { eq: true }, featured: { eq: true } }
         }
+        limit: 1000
       ) {
         nodes {
           id
@@ -26,13 +29,19 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      tags: allMdx(limit: 1000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
     }
   `).then(result => {
     if (result.errors) {
-      throw result.errors
+      reporter.panicOnBuild(`Error while running GraphQL query.`)
+      return
     }
 
-    const posts = result.data.allMdx.nodes
+    const posts = result.data.posts.nodes
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1]
@@ -45,6 +54,18 @@ exports.createPages = ({ graphql, actions }) => {
           slug: post.fields.slug,
           previous,
           next,
+        },
+      })
+    })
+
+    const tags = result.data.tags.group
+
+    tags.forEach(tag => {
+      createPage({
+        path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+        component: tagTemplate,
+        context: {
+          tag: tag.fieldValue,
         },
       })
     })

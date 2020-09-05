@@ -10,7 +10,7 @@ import { rhythm, scale } from "../utils/typography"
 
 export default ({ data, pageContext, location }) => {
   const { title } = useSiteMetadata()
-  const { frontmatter, excerpt, body } = data.mdx
+  const { frontmatter, excerpt, timeToRead, body } = data.mdx
   const { previous, next } = pageContext
 
   return (
@@ -29,6 +29,7 @@ export default ({ data, pageContext, location }) => {
           >
             {frontmatter.title}
           </h1>
+
           <p
             style={{
               ...scale(-1 / 5),
@@ -36,7 +37,22 @@ export default ({ data, pageContext, location }) => {
               marginBottom: rhythm(1),
             }}
           >
-            {frontmatter.date}
+            <small>{frontmatter.date}</small>
+            &nbsp;&bull;&nbsp;
+            <small>
+              {timeToRead} {timeToRead === 1 ? "min" : "mins"}
+            </small>
+            &nbsp;&bull;&nbsp;
+            <small>
+              Tags:
+              {frontmatter.tags.map(tag => {
+                return (
+                  <Link key={tag} to={`/tags/${tag}/`}>
+                    {tag}
+                  </Link>
+                )
+              })}
+            </small>
           </p>
         </header>
         <MDXRenderer>{body}</MDXRenderer>
@@ -85,11 +101,13 @@ export const pageQuery = graphql`
     mdx(fields: { slug: { eq: $slug } }) {
       excerpt(pruneLength: 160)
       body
+      timeToRead
       frontmatter {
         title
         date(formatString: "YYYY MMMM Do")
         description
         category
+        tags
       }
     }
   }
