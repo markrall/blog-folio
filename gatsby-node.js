@@ -10,7 +10,6 @@ exports.createPages = ({ graphql, actions, reporter }) => {
   return graphql(`
     query {
       posts: allMdx(
-        sort: { fields: [frontmatter___date], order: ASC }
         filter: {
           frontmatter: { published: { eq: true }, featured: { eq: true } }
         }

@@ -123,7 +123,7 @@ export default BlogIndex
 export const pageQuery = graphql`
   query {
     folioGrp: allMdx(
-      sort: { fields: [frontmatter___date], order: ASC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: {
           published: { eq: true }
@@ -149,7 +149,7 @@ export const pageQuery = graphql`
     }
 
     postGrp: allMdx(
-      sort: { fields: [frontmatter___date], order: ASC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: {
           published: { eq: true }

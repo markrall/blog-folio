@@ -33,7 +33,6 @@ const Tags = ({ pageContext, data, location }) => {
           )
         })}
       </ul>
-      <Link to="/tags">All tags &rarr;</Link>
     </Layout>
   )
 }

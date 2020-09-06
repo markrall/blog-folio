@@ -1,8 +1,10 @@
 ## TODO
 
-[ ] Update post & folio navigation to only include items from each respective category
+[x] Update post & folio navigation to only include items from each respective category
 
-[ ] Create linkable tag filters
+[x] Create linkable tag filters
+
+[ ] Consider related posts component based on [this post](https://khalilstemmler.com/articles/gatsby-related-posts-component/)
 
 ---
 
