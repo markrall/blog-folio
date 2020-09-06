@@ -1,10 +1,16 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import styled from "styled-components"
+
+const Image = styled(Img)`
+  border-radius: 5px;
+`
 
 const BlogIndex = ({ data, location }) => {
   const { title, description } = useSiteMetadata()
@@ -25,6 +31,12 @@ const BlogIndex = ({ data, location }) => {
             return (
               <article key={fields.slug}>
                 <header>
+                  {!!frontmatter.cover ? (
+                    <Image
+                      fluid={frontmatter.cover.childImageSharp.fluid}
+                      alt={frontmatter.cover.name}
+                    />
+                  ) : null}
                   <h3
                     style={{
                       marginBottom: rhythm(1 / 4),
@@ -74,6 +86,12 @@ const BlogIndex = ({ data, location }) => {
             return (
               <article key={fields.slug}>
                 <header>
+                  {!!frontmatter.cover ? (
+                    <Image
+                      fluid={frontmatter.cover.childImageSharp.fluid}
+                      alt={frontmatter.cover.name}
+                    />
+                  ) : null}
                   <h3
                     style={{
                       marginBottom: rhythm(1 / 4),
@@ -140,6 +158,15 @@ export const pageQuery = graphql`
         frontmatter {
           title
           date(formatString: "MMMM Do, YYYY")
+          cover {
+            publicURL
+            name
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           tags
         }
         fields {
@@ -166,6 +193,15 @@ export const pageQuery = graphql`
         frontmatter {
           title
           date(formatString: "MMMM Do, YYYY")
+          cover {
+            publicURL
+            name
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           tags
         }
         fields {

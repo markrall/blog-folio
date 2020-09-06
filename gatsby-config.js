@@ -22,6 +22,8 @@ module.exports = {
   siteMetadata: siteMetadata,
   plugins: [
     `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -31,28 +33,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/portfolio`,
-        name: `portfolio`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
+        path: `${__dirname}/content`,
+        name: `content`,
       },
     },
     `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -60,18 +49,17 @@ module.exports = {
               maxWidth: 590,
             },
           },
+        ],
+        plugins: [
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: `gatsby-remark-images`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
+              maxWidth: 590,
             },
           },
-          `gatsby-remark-copy-linked-files`,
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

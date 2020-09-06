@@ -1,5 +1,9 @@
 ## TODO
 
+[ ] Style site end-to-end
+
+[ ] Review relevant [recipies](https://www.gatsbyjs.com/docs/recipes/) and [reference guides](https://www.gatsbyjs.com/docs/guides/)
+
 [x] Update post & folio navigation to only include items from each respective category
 
 [x] Create linkable tag filters
