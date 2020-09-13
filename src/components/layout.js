@@ -1,23 +1,18 @@
 import React from "react"
 
 import Header from "./header"
-import { rhythm } from "../utils/typography"
 import Footer from "./footer"
+
+import { GlobalStyles, Container, Main } from "./global-styles"
 
 const Layout = ({ location, title, children }) => {
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
+    <Container>
+      <GlobalStyles />
       <Header title={title} location={location} />
-      <main>{children}</main>
+      <Main>{children}</Main>
       <Footer />
-    </div>
+    </Container>
   )
 }
 

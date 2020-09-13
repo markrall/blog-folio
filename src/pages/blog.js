@@ -5,6 +5,8 @@ import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import PostMeta from "../components/post-meta"
+import { SectionWrapper } from '../components/global-styles'
 
 const Blog = ({ data, location }) => {
   const { title } = useSiteMetadata()
@@ -13,55 +15,42 @@ const Blog = ({ data, location }) => {
     <Layout location={location} title={title}>
       <SEO title="All posts" />
 
-      <h2>Blog</h2>
-
-      <section className="featuredPosts">
-        {data.allMdx.nodes.map(
-          ({ excerpt, frontmatter, fields, timeToRead }) => {
-            const title = frontmatter.title || fields.slug
-            return (
-              <article key={fields.slug}>
-                <header>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    <Link style={{ boxShadow: `none` }} to={fields.slug}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <p>
-                    <small>{frontmatter.date}</small>
-                    &nbsp;&bull;&nbsp;
-                    <small>
-                      {timeToRead} {timeToRead === 1 ? "min" : "mins"}
-                    </small>
-                    &nbsp;&bull;&nbsp;
-                    <small>
-                      Tags:
-                      {frontmatter.tags.map(tag => {
-                        return (
-                          <Link key={tag} to={`/tags/${tag}/`}>
-                            {tag}
-                          </Link>
-                        )
-                      })}
-                    </small>
-                  </p>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: frontmatter.description || excerpt,
-                    }}
-                  />
-                </section>
-              </article>
-            )
-          }
-        )}
-      </section>
+      <SectionWrapper>
+        <section className="featuredPosts">
+          <h2>Blog</h2>
+          {data.allMdx.nodes.map(
+            ({ excerpt, frontmatter, fields, timeToRead }) => {
+              const title = frontmatter.title || fields.slug
+              return (
+                <article key={fields.slug}>
+                  <header>
+                    <h3
+                      style={{
+                        marginBottom: rhythm(1 / 4),
+                      }}
+                    >
+                      <Link style={{ boxShadow: `none` }} to={fields.slug}>
+                        {title}
+                      </Link>
+                    </h3>
+                    <PostMeta
+                      frontmatter={frontmatter}
+                      timeToRead={timeToRead}
+                    />
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: frontmatter.description || excerpt,
+                      }}
+                    />
+                  </section>
+                </article>
+              )
+            }
+          )}
+        </section>
+      </SectionWrapper>
     </Layout>
   )
 }

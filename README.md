@@ -1,8 +1,14 @@
 ## TODO
 
-[ ] Style site end-to-end
+[ ] Style site end-to-end. Implement [SCSS](https://www.gatsbyjs.com/docs/sass/) and customise [typography.js](https://www.gatsbyjs.com/docs/typography-js/) theme
 
-[ ] Review relevant [recipies](https://www.gatsbyjs.com/docs/recipes/) and [reference guides](https://www.gatsbyjs.com/docs/guides/)
+[ ] For example you could add [pagination](https://www.gatsbyjs.com/docs/adding-pagination/), add a [sitemap](https://www.gatsbyjs.com/docs/creating-a-sitemap/)
+
+[ ] Consider adding [TypeScript](https://www.gatsbyjs.com/docs/typescript/)
+
+[ ] Read sections on [deploying ans hosting](https://www.gatsbyjs.com/docs/deploying-and-hosting/), [testing](https://www.gatsbyjs.com/docs/testing/) and other [reference guides](https://www.gatsbyjs.com/docs/guides/)
+
+[ ] Review relevant [recipies](https://www.gatsbyjs.com/docs/recipes/)
 
 [x] Update post & folio navigation to only include items from each respective category
 

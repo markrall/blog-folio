@@ -2,6 +2,7 @@
 title: Weather App
 date: "2020-09-01T22:12:03.284Z"
 description: "Look up current and five day weather forcast for any loaction in the world"
+cover: ./gatsby-icon.png
 category: "portfolio"
 tags: ["project", "nodejs", "scss"]
 featured: true

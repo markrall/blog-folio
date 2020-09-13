@@ -5,13 +5,33 @@ const _ = require(`lodash`)
 exports.createPages = ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const projectPostTemplate = path.resolve(`./src/templates/portfolio-post.js`)
   const tagTemplate = path.resolve(`./src/templates/tags.js`)
 
   return graphql(`
     query {
       posts: allMdx(
         filter: {
-          frontmatter: { published: { eq: true }, featured: { eq: true } }
+          frontmatter: { published: { eq: true }, category: { eq: "post" } }
+        }
+        limit: 1000
+      ) {
+        nodes {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            title
+            date(formatString: "MMMM Do, YYYY")
+            tags
+          }
+          fields {
+            slug
+          }
+        }
+      }
+      projects: allMdx(
+        filter: {
+          frontmatter: { published: { eq: true }, category: { eq: "portfolio" } }
         }
         limit: 1000
       ) {
@@ -51,6 +71,24 @@ exports.createPages = ({ graphql, actions, reporter }) => {
         component: blogPostTemplate,
         context: {
           slug: post.fields.slug,
+          previous,
+          next,
+        },
+      })
+    })
+
+    const projects = result.data.projects.nodes
+
+    projects.forEach((project, index) => {
+      const previous =
+        index === projects.length - 1 ? null : projects[index + 1]
+      const next = index === 0 ? null : projects[index - 1]
+
+      createPage({
+        path: project.fields.slug,
+        component: projectPostTemplate,
+        context: {
+          slug: project.fields.slug,
           previous,
           next,
         },

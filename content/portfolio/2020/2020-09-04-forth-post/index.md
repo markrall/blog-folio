@@ -2,6 +2,7 @@
 title: Forth App
 date: "2020-09-04T22:12:03.284Z"
 description: "Show me the money"
+cover: ./gatsby-icon-3.png
 category: "portfolio"
 tags: ["lab", "nodejs", "scss"]
 featured: true

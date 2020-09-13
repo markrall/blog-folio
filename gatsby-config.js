@@ -7,14 +7,15 @@ const config = require("gatsby-plugin-config").default
 
 const siteMetadata = {
   title: `productbymark.com`,
+  description: `Product design & development`,
+  tagline: "Delightful web apps, built for results",
+  siteUrl: `https://productbymark.com/`,
   author: {
     name: `Mark Rall`,
     summary: `who lives and works in Melbourne, Australia building useful things.`,
-  },
-  description: `Digital product design and development`,
-  siteUrl: `https://productbymark.com/`,
-  social: {
-    twitter: `productbymark`,
+    social: {
+      twitter: `productbymark`,
+    },
   },
 }
 
@@ -22,6 +23,8 @@ module.exports = {
   siteMetadata: siteMetadata,
   plugins: [
     `gatsby-plugin-styled-components`,
+    `babel-plugin-styled-components`,
+    `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

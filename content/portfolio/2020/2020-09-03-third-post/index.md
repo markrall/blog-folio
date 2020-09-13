@@ -2,6 +2,7 @@
 title: Wealth App
 date: "2020-09-03T22:12:03.284Z"
 description: "Make muny rain"
+cover: ./gatsby-icon-2.png
 category: "portfolio"
 tags: ["project", "nodejs", "scss"]
 featured: true

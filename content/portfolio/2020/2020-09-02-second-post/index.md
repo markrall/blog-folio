@@ -2,6 +2,7 @@
 title: Some App
 date: "2020-09-02T22:12:03.284Z"
 description: "Solve world hunder"
+cover: ./gatsby-icon-1.png
 category: "portfolio"
 tags: ["lab", "nodejs", "scss"]
 featured: true

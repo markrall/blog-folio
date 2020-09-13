@@ -88,7 +88,7 @@ export default ({ data, pageContext, location }) => {
 }
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query ProjectPostBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
