@@ -16,6 +16,8 @@
 
 [ ] Consider related posts component based on [this post](https://khalilstemmler.com/articles/gatsby-related-posts-component/)
 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a6cbbff2-7335-4968-b916-329d9dee64e2/deploy-status)](https://app.netlify.com/sites/markrall/deploys)
 ---
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->

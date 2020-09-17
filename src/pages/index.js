@@ -15,8 +15,8 @@ import heroBg from '../../content/assets/homepage-hero-bg.png'
 import aboutIcons from '../../content/assets/svg/icon-sprite.svg'
 
 const SectionWrapperHero = styled(SectionWrapper)`
-  background: url(${heroBg}) no-repeat bottom right, var(--gradient-bottom);
-  background-size: 50%, 100%;
+  background: url(${heroBg}) no-repeat bottom 10% right 15%, var(--gradient-bottom);
+  background-size: 40%, 100%;
   color: var(--color-light);
   display: flex;
   align-items: center;
