@@ -8,16 +8,13 @@ const GlobalStyles = createGlobalStyle`
     --color-accent-1: rgba(130, 2, 99, 1);
     --color-accent-2: rgba(217, 3, 104, 1);
     --color-accent-3: rgba(246, 174, 40, 1);
-    --color-accent-4:  rgba(57, 160, 237, 1);
+    --color-accent-4:  rgba(26, 200, 237, 1);
+    --color-accent-4:  rgba(247, 92, 3, 1);
+    --color-accent-5:  rgba(232, 232, 232, 1);
+    --color-accent-6:  rgba(239, 35, 60, 1);
+    --color-accent-7:  rgba(76, 185, 99, 1);
 
-    --gradient-top: linear-gradient(0deg, rgba(8, 7, 8, 1), rgba(130, 2, 99, 1), rgba(217, 3, 104, 1), rgba(246, 174, 40, 1));
-    --gradient-right: linear-gradient(90deg, rgba(8, 7, 8, 1), rgba(130, 2, 99, 1), rgba(217, 3, 104, 1), rgba(246, 174, 40, 1));
     --gradient-bottom: linear-gradient(180deg, rgba(8, 7, 8, 1), rgba(130, 2, 99, 1), rgba(217, 3, 104, 1), rgba(246, 174, 40, 1));
-    --gradient-left: linear-gradient(270deg, rgba(8, 7, 8, 1), rgba(130, 2, 99, 1), rgba(217, 3, 104, 1), rgba(246, 174, 40, 1));
-    --gradient-top-right: linear-gradient(45deg, rgba(8, 7, 8, 1), rgba(130, 2, 99, 1), rgba(217, 3, 104, 1), rgba(246, 174, 40, 1));
-    --gradient-bottom-right: linear-gradient(135deg, rgba(8, 7, 8, 1), rgba(130, 2, 99, 1), rgba(217, 3, 104, 1), rgba(246, 174, 40, 1));
-    --gradient-top-left: linear-gradient(225deg, rgba(8, 7, 8, 1), rgba(130, 2, 99, 1), rgba(217, 3, 104, 1), rgba(246, 174, 40, 1));
-    --gradient-bottom-left: linear-gradient(315deg, rgba(8, 7, 8, 1), rgba(130, 2, 99, 1), rgba(217, 3, 104, 1), rgba(246, 174, 40, 1));
     --gradient-section-highlight: linear-gradient(45deg, rgba(130, 2, 99, 1), rgba(217, 3, 104, 1));
   }
 
@@ -26,6 +23,10 @@ const GlobalStyles = createGlobalStyle`
   $shadow-dark-medium: rgba(8, 7, 8, .65);
   $shadow-dark-light: rgba(8, 7, 8, .5);
   $shadow-dark-lightest: rgba(8, 7, 8, .25);
+
+  * {
+    border: none;
+  }
 
   html {
     scroll-behavior: smooth;
@@ -54,6 +55,7 @@ const GlobalStyles = createGlobalStyle`
       border: 1px solid var(--color-accent-1);
       box-shadow: none;
       border-radius: 3px;
+      color: var(--color);
       padding: ${rhythm(0.25)} ${rhythm(0.75)};
       text-shadow: 2px 2px 2px rgba(8, 7, 8, 0.25);
       transition: all .3s;
