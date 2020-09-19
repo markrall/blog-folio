@@ -20,7 +20,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a6cbbff2-7335-4968-b916-329d9dee64e2/deploy-status)](https://app.netlify.com/sites/markrall/deploys)
 ---
 
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+<!-- AUTO-GENERATED-CONTENT:START (STARTgit congiER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />

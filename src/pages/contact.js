@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import axios from "axios"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
@@ -10,9 +10,7 @@ import { SectionWrapper } from '../components/global-styles'
 
 import Socials from '../components/socials'
 
-const ContactFormStyles = styled.div`
-  
-`
+const ContactFormStyles = styled.div``
 
 const FormGroup = styled.div`
   margin: ${rhythm(.5)} 0;
@@ -75,10 +73,13 @@ const FormMsg = styled.p`
 const Contact = ({ location }) => {
   const { title } = useSiteMetadata()
 
+  const inputElementRef = React.createRef();
+
   const [serverState, setServerState] = useState({
     submitting: false,
     status: null,
   })
+
   const handleServerResponse = (ok, msg, form) => {
     setServerState({
       submitting: false,
@@ -88,6 +89,7 @@ const Contact = ({ location }) => {
       form.reset()
     }
   }
+
   const handleOnSubmit = e => {
     e.preventDefault()
     const form = e.target
@@ -104,6 +106,11 @@ const Contact = ({ location }) => {
         handleServerResponse(false, r.response.data.error, form)
       })
   }
+
+  useEffect(() => {
+    inputElementRef.current.focus()
+  }, [inputElementRef])
+
   return (
     <Layout location={location} title={title}>
       <SectionWrapper>
@@ -121,7 +128,7 @@ const Contact = ({ location }) => {
                     id="exampleInputName"
                     placeholder="Enter your name"
                     required="required"
-                    autofocus="true"
+                    ref={inputElementRef}
                   />
                 </Label>
               </FormGroup>
@@ -149,9 +156,8 @@ const Contact = ({ location }) => {
                     required="required"
                     cols="50"
                     rows="4"
-                  >
-                    Message...
-                  </TextArea>
+                    defaultValue="Message..."
+                  ></TextArea>
                 </Label>
               </FormGroup>
               <button
