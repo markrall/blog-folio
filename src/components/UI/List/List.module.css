@@ -1,0 +1,19 @@
+.List {
+  list-style: none;
+}
+
+.List li {
+  position: relative;
+}
+
+.List li:before {
+  content: "";
+  position: absolute;
+  border-right: 1px solid var(--color);
+  border-bottom: 1px solid var(--color);
+  width: .4rem;
+  height: .4rem;
+  top: .55rem;
+  left: -20px;
+  transform: rotate(-45deg);
+}

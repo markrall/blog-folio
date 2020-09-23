@@ -6,15 +6,15 @@ require("dotenv").config({
 const config = require("gatsby-plugin-config").default
 
 const siteMetadata = {
-  title: `productbymark.com`,
-  description: `Product design & development`,
-  tagline: "Delightful web apps, built for results",
-  siteUrl: `https://productbymark.com/`,
+  title: `Full-stack JavaScript product developer`,
+  description: `Delightful user experience, built for results, through mordern product design & development.`,
+  tagline: `I'm a multi-hat front-end developer specialising in the design, build and optimisation of websites and apps.`,
+  siteUrl: `https://markrall.dev/`,
   author: {
     name: `Mark Rall`,
-    summary: `who lives and works in Melbourne, Australia building useful things.`,
+    summary: `who lives and works in Victoria, Australia building useful things.`,
     social: {
-      twitter: `productbymark`,
+      twitter: `marksrall`,
     },
   },
 }

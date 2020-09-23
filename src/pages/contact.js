@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
-import Layout from "../components/layout"
+import Layout from "../components/Layout/Layout"
 
 import { rhythm } from "../utils/typography"
 import styled from 'styled-components'
@@ -73,7 +73,7 @@ const FormMsg = styled.p`
 const Contact = ({ location }) => {
   const { title } = useSiteMetadata()
 
-  const inputElementRef = React.createRef();
+  const inputElementRef = React.useRef(null);
 
   const [serverState, setServerState] = useState({
     submitting: false,

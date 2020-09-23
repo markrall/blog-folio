@@ -1,22 +1,24 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 
-import { useSiteMetadata } from "../hooks/useSiteMetadata"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
-import styled from "styled-components"
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
+import Layout from '../components/Layout/Layout';
+import SEO from '../components/seo';
+import { rhythm } from '../utils/typography';
+import styled from 'styled-components';
 
-import { SectionWrapper } from '../components/global-styles'
-import FeaturedProjects from '../components/featured-projects'
-import FeaturedPosts from "../components/featured-posts"
+import { SectionWrapper } from '../components/global-styles';
+import FeaturedProjects from '../components/featured-projects';
+import FeaturedPosts from '../components/featured-posts';
+import List from "../components/UI/List/List"
+import HorizontalList from '../components/UI/List/HorizontalList/HorizontalList';
 
-import heroBg from '../../content/assets/homepage-hero-bg.png'
-import aboutIcons from '../../content/assets/svg/icon-sprite.svg'
+import heroBg from '../../content/assets/homepage-hero-bg.png';
+import aboutIcons from '../../content/assets/svg/icon-sprite.svg';
 
 const SectionWrapperHero = styled(SectionWrapper)`
   background: url(${heroBg}) no-repeat bottom 10% right 15%, var(--gradient-bottom);
-  background-size: 40%, 100%;
+  background-size: 60%, 100%;
   color: var(--color-light);
   display: flex;
   align-items: center;
@@ -67,6 +69,7 @@ const SectionWrapperAbout = styled(SectionWrapper)`
       justify-content: center;
       font-size: ${rhythm(0.5)};
       list-style: none;
+      margin-top: ${rhythm(2)};
 
       & > li {
         border-radius: 3px;
@@ -115,6 +118,10 @@ const SectionWrapperAbout = styled(SectionWrapper)`
             transform: translate(-50%, -50%);
           }
         }
+
+        & > ul {
+          list-style: none;
+        }
       }
     }
   }
@@ -139,8 +146,9 @@ export default ({ location }) => {
 
       <SectionWrapperHero>
         <section>
-          <h2 className="display">{description}</h2>
-          <h3 className="display">{tagline}</h3>
+          <h2 className="display">{title}</h2>
+          <h3 className="display">{description}</h3>
+          <p>{tagline}</p>
         </section>
       </SectionWrapperHero>
 
@@ -148,13 +156,43 @@ export default ({ location }) => {
         <section className="homepage section-about">
           <h2>Hi there, I'm Mark. Great to meet you!</h2>
           <p>
-            The internet provides opportunities it provides for community and
-            commerce. Using the latest product development practices and
-            <abbr title="Javascript, APIs and Markup">JAM</abbr> stack
-            technologies, I specialise in the research, design and development
-            of dynamic, responsive web sites and applications.
+            Like never before, we are able to connect and collaborate with just
+            about anyone at speeds and in ways that haven't exisited until
+            relatively recently. Access to information and opportunity is almost
+            ubiquitous. Since the COVID-19 outbreak, the internet has become
+            even more important for many people in most facets of their lives.
           </p>
+          <p>
+            With almost two decades of experience in a variety of roles, I enjoy
+            designing, building and optimising web applications using the latest
+            product design and development practices, working closely with
+            customers, stakeholders and teams.
+          </p>
+          <p>
+            My goal is to become a full-stack web specialist, combining my
+            product design and management skills with the ability to rapidly
+            build and test modern web solutions using technologies like:
+          </p>
+          <HorizontalList>
+            <li>HTML &amp; and (S)CSS</li>
+            <li>Javascript (ES6+)</li>
+            <li>ReactJS</li>
+            <li>NodeJS</li>
+            <li>
+              <abbr title="Server-side Rendering">SSR</abbr>
+              &nbsp;&amp;&nbsp;
+              <abbr title="Static Site Generation">SSG</abbr>&nbsp;
+              <abbr title="Javascript, APIs and Markup">JAM</abbr> stacks
+            </li>
+            <li>Gatsby &amp; NextJS</li>
+          </HorizontalList>
           <h3>Process</h3>
+          <p>
+            Years of trial and error have taught me to start small, understand
+            the problem fully, assess viable available solutions against
+            competing constraints, and to optimise based on incremental learning
+            over time.
+          </p>
           <ul className="section-about__list">
             <li>
               <div className="icon-wrapper">
@@ -165,14 +203,14 @@ export default ({ location }) => {
 
               <h4>Research</h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Identify and quantify customer/business needs, opportunities or
+                risks.
               </p>
-              <ul>
+              <List>
                 <li>Market</li>
                 <li>Competitor</li>
                 <li>Customer</li>
-              </ul>
+              </List>
             </li>
             <li>
               <div className="icon-wrapper">
@@ -183,14 +221,14 @@ export default ({ location }) => {
 
               <h4>Design</h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Qualify customer goals. Test potential solutions through rapid
+                prototyping.
               </p>
-              <ul>
+              <List>
                 <li>Customer discovery</li>
                 <li>Protoyping</li>
                 <li>User testing</li>
-              </ul>
+              </List>
             </li>
             <li>
               <div className="icon-wrapper">
@@ -201,15 +239,15 @@ export default ({ location }) => {
 
               <h4>Build</h4>
               <p>
-                MVP! Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
+                Build{" "}
+                <abbr title="Minimum Viable Product experiment">MVPe</abbr>,
+                balancing short-term effort against long-term ownership.
               </p>
-              <ul>
+              <List>
                 <li>Architecture</li>
                 <li>Build &amp; test</li>
                 <li>Deployment</li>
-              </ul>
+              </List>
             </li>
             <li>
               <div className="icon-wrapper">
@@ -220,16 +258,23 @@ export default ({ location }) => {
 
               <h4>Launch</h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Progressively test and refine the solution to optimise for
+                scale.
               </p>
-              <ul>
+              <List>
                 <li>Analytics</li>
                 <li>Content management</li>
-              </ul>
+                <li>Optimisation</li>
+              </List>
             </li>
           </ul>
-          <h3>Benefits</h3>
+          <h3>Working Principles</h3>
+          <p>
+            A well-founded frame of reference, based on first principles helps
+            to define what's important and why, in priority order. It helps
+            teams and stakeholders to do their best work. A web experience
+            should be fast, realiable and easy-to-use.
+          </p>
           <ul className="section-about__list">
             <li>
               <div className="icon-wrapper">
@@ -276,6 +321,9 @@ export default ({ location }) => {
           <p>
             <Link to="/contact" className="btn" title="contact me">
               Get in touch
+            </Link>
+            <Link to="/about" className="btn" title="about me">
+              More about me
             </Link>
           </p>
         </section>

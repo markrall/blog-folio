@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
-import Layout from "../components/layout"
+import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import PostMeta from "../components/post-meta"

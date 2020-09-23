@@ -1,0 +1,23 @@
+.HorizontalList {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin: 0 auto;
+  width: 80%;
+}
+
+.HorizontalList li {
+  position: relative;
+}
+
+.HorizontalList li:before {
+  content: "";
+  position: absolute;
+  border-right: 1px solid var(--color);
+  border-bottom: 1px solid var(--color);
+  width: .5rem;
+  height: .5rem;
+  top: .6rem;
+  left: -20px;
+  transform: rotate(-45deg);
+}
