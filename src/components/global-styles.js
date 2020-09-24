@@ -98,9 +98,13 @@ const GlobalStyles = createGlobalStyle`
     border-left-color: #444;
   }
 
+  .gatsby-image-wrapper {
+    border-radius: 3px;
+  }
+
   @media (max-width: 420px) {
     h1, h2, h3, h4, h5, h6 {
-      margin-top: ${rhythm(.5)};
+      margin-top: ${rhythm(0.5)};
     }
   }
 `

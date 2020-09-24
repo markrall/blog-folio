@@ -8,7 +8,7 @@ import Bio from "../components/bio"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/seo"
 import { rhythm } from "../utils/typography"
-import PostMeta from "../components/post-meta"
+import PostMeta from "../components/PostMeta/PostMeta"
 import { SectionWrapper } from "../components/global-styles"
 
 

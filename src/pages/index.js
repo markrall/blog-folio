@@ -41,7 +41,7 @@ const SectionWrapperHero = styled(SectionWrapper)`
     color: rgba(252, 252, 252, 0.94);
     font-size: ${rhythm(1.25)};
     font-weight: 100;
-    line-height: ${rhythm(1.5)};
+    line-height: ${rhythm(1.75)};
   }
 
   & .display {

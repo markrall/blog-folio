@@ -1,18 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../../utils/typography'
 import styled from "styled-components"
 
 const PostMetaStyles = styled.p`
   display: flex;
-  line-height: ${rhythm(1.25)};
-  margin-bottom: ${rhythm(.5)};
   flex-flow: row wrap;
-
+  line-height: ${rhythm(1.25)};
+  margin-bottom: ${rhythm(0.5)};
+  
   .meta-item:not(:last-child)::after {
     content: "\u2022";
-    margin: 0 ${rhythm(.25)};
+    margin: 0 ${rhythm(0.25)};
   }
 
   .pill,
@@ -34,7 +34,6 @@ const PostMetaStyles = styled.p`
 `
 
 const PostMeta = ({ frontmatter, timeToRead }) => {
-
   return (
     <PostMetaStyles>
       <small className="meta-item">{frontmatter.date}</small>
@@ -50,6 +49,30 @@ const PostMeta = ({ frontmatter, timeToRead }) => {
           )
         })}
       </small>
+      {!!frontmatter.repo ? (
+        <>
+          <small className="meta-item">
+            <a
+              href={frontmatter.repo}
+              title="Repo on Github"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Repo
+            </a>{" "}
+          </small>
+          <small className="meta-item">
+            <a
+              href={frontmatter.site}
+              title="Website"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Website
+            </a>
+          </small>
+        </>
+      ) : null}
     </PostMetaStyles>
   )
 }

@@ -5,7 +5,7 @@ import Image from "gatsby-image"
 import { rhythm } from "../utils/typography"
 import styled from 'styled-components'
 
-import PostMeta from './post-meta'
+import PostMeta from "./PostMeta/PostMeta"
 
 const FeaturedProjectStyles = styled.section`
   & > section {

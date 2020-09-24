@@ -6,7 +6,7 @@ import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/seo"
 import { rhythm } from "../utils/typography"
-import PostMeta from "../components/post-meta"
+import PostMeta from "../components/PostMeta/PostMeta"
 import { SectionWrapper } from "../components/global-styles"
 
 const Portfolio = ({ data, location }) => {
@@ -24,13 +24,15 @@ const Portfolio = ({ data, location }) => {
             ({ excerpt, frontmatter, fields, timeToRead }) => {
               const title = frontmatter.title || fields.slug
               return (
-                <article key={fields.slug}>
+                <article key={fields.slug} style={{ marginBottom: "10rem"}}>
                   <header>
                     {!!frontmatter.cover ? (
-                      <Image
-                        fluid={frontmatter.cover.childImageSharp.fluid}
-                        alt={frontmatter.cover.name}
-                      />
+                      <Link to={fields.slug}>
+                        <Image
+                          fluid={frontmatter.cover.childImageSharp.fluid}
+                          alt={frontmatter.cover.name}
+                        />
+                      </Link>
                     ) : null}
                     <h3
                       style={{
@@ -47,11 +49,7 @@ const Portfolio = ({ data, location }) => {
                     />
                   </header>
                   <section>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: frontmatter.description || excerpt,
-                      }}
-                    />
+                    <p>{frontmatter.description}</p>
                   </section>
                 </article>
               )
@@ -94,6 +92,7 @@ export const pageQuery = graphql`
             }
           }
           tags
+          description
         }
         fields {
           slug

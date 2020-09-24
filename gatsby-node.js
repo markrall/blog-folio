@@ -41,6 +41,8 @@ exports.createPages = ({ graphql, actions, reporter }) => {
           frontmatter {
             title
             date(formatString: "MMMM Do, YYYY")
+            repo
+            site
             tags
           }
           fields {

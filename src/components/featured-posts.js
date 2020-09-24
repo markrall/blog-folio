@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
 
-import PostMeta from './post-meta'
+import PostMeta from './PostMeta/PostMeta'
 
 const FeaturedPosts = () => {
   const data = useStaticQuery(graphql`
