@@ -2,7 +2,7 @@
 
 <h2 align="center">Personal portfolio and blog website</h2>
 
-<p align="center">Built with [Gatsby](https://www.gatsbyjs.com/), [Netlify](https://www.netlify.com/) and [Getform](https://getform.io/).</p>
+<p align="center">Built with <a href="https://www.gatsbyjs.com/">Gatsby</a>, <a href="https://www.netlify.com">Netlify</a> and <a href="https://getform.io/">Getform</a>.</p>
 
 <p align="center">
   <a href="https://app.netlify.com/sites/markrall/deploys" target="_blank">
@@ -30,5 +30,5 @@
 
 [ ] Add related posts component based on [this post](https://khalilstemmler.com/articles/gatsby-related-posts-component/)
 
-[ ] Add recaptcha to contact page https://getform.io/docs/collecting-submissions/spam-filtering-with-recaptcha
+[ ] Refactor contact form into a reusable component and add recaptcha - https://getform.io/docs/collecting-submissions/spam-filtering-with-recaptcha
 
