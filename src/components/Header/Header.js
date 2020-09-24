@@ -40,10 +40,6 @@ const HeaderWrapperStyles = styled.div`
       & img {
         margin-bottom: 0;
       }
-
-      & img:hover {
-        filter: brightness(1.5);
-      }
     }
 
     & .site-logo-link {
@@ -70,6 +66,23 @@ const HeaderWrapperStyles = styled.div`
       }
       & a.active:hover {
         box-shadow: none;
+      }
+    }
+  }
+
+  @media (max-width: 420px) {
+    & > header {
+      flex-flow: column wrap;
+
+      & nav {
+        font-size: ${rhythm(0.5)};
+
+        & a,
+        & a:link,
+        & a:active,
+        & a:visited {
+          margin: ${rhythm(0.5)} ${rhythm(0.25)} 0 ${rhythm(0.25)};
+        }
       }
     }
   }

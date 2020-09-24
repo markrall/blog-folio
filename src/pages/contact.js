@@ -118,6 +118,13 @@ const Contact = ({ location }) => {
           <h3>Lets get in touch!</h3>
           <ContactFormStyles>
             <form onSubmit={handleOnSubmit} autoComplete="off">
+              {serverState.status && (
+                <FormMsg
+                  className={!serverState.status.ok ? "errorMsg" : "successMsg"}
+                >
+                  {serverState.status.msg}
+                </FormMsg>
+              )}
               <FormGroup className="form__group">
                 <Label htmlFor="exampleInputName">
                   Name
@@ -156,7 +163,6 @@ const Contact = ({ location }) => {
                     required="required"
                     cols="50"
                     rows="4"
-                    defaultValue="Message..."
                   ></TextArea>
                 </Label>
               </FormGroup>
@@ -167,13 +173,6 @@ const Contact = ({ location }) => {
               >
                 Submit
               </button>
-              {serverState.status && (
-                <FormMsg
-                  className={!serverState.status.ok ? "errorMsg" : "successMsg"}
-                >
-                  {serverState.status.msg}
-                </FormMsg>
-              )}
             </form>
           </ContactFormStyles>
         </section>

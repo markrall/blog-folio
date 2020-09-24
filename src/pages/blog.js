@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
-import SEO from "../components/seo"
+import SEO from "../components/SEO/seo"
 import { rhythm } from "../utils/typography"
 import PostMeta from "../components/post-meta"
 import { SectionWrapper } from '../components/global-styles'
@@ -13,11 +13,11 @@ const Blog = ({ data, location }) => {
 
   return (
     <Layout location={location} title={title}>
-      <SEO title="All posts" />
+      <SEO title="Blog" />
 
       <SectionWrapper>
         <section className="featuredPosts">
-          <h2>Blog</h2>
+          <h1>Blog</h1>
           {data.allMdx.nodes.map(
             ({ excerpt, frontmatter, fields, timeToRead }) => {
               const title = frontmatter.title || fields.slug

@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
-import SEO from "../components/seo"
+import SEO from "../components/SEO/seo"
 
 import { rhythm } from '../utils/typography'
 import styled from 'styled-components'

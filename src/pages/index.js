@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import Layout from '../components/Layout/Layout';
-import SEO from '../components/seo';
+import SEO from '../components/SEO/seo';
 import { rhythm } from '../utils/typography';
 import styled from 'styled-components';
 
@@ -17,7 +17,8 @@ import heroBg from '../../content/assets/homepage-hero-bg.png';
 import aboutIcons from '../../content/assets/svg/icon-sprite.svg';
 
 const SectionWrapperHero = styled(SectionWrapper)`
-  background: url(${heroBg}) no-repeat bottom 10% right 15%, var(--gradient-bottom);
+  background: url(${heroBg}) no-repeat bottom 10% right 15%,
+    var(--gradient-bottom);
   background-size: 60%, 100%;
   color: var(--color-light);
   display: flex;
@@ -46,6 +47,21 @@ const SectionWrapperHero = styled(SectionWrapper)`
   & .display {
     letter-spacing: -1px;
   }
+
+  @media (max-width: 420px) {
+    background: bottom 10% right 15%, var(--gradient-bottom);
+    min-height: 84vh;
+
+    & h2 {
+      font-size: ${rhythm(1.25)};
+      line-height: ${rhythm(2)};
+    }
+
+    & h3 {
+      font-size: ${rhythm(0.85)};
+      line-height: ${rhythm(1.5)};
+    }
+  }
 `
 const SectionWrapperAbout = styled(SectionWrapper)`
   & > section {
@@ -69,7 +85,7 @@ const SectionWrapperAbout = styled(SectionWrapper)`
       justify-content: center;
       font-size: ${rhythm(0.5)};
       list-style: none;
-      margin-top: ${rhythm(2)};
+      margin: ${rhythm(2)} 0 0 0;
 
       & > li {
         border-radius: 3px;
@@ -122,6 +138,12 @@ const SectionWrapperAbout = styled(SectionWrapper)`
         & > ul {
           list-style: none;
         }
+
+        @media (max-width: 420px) {
+          h4 {
+            margin-top: ${rhythm(2)};
+          }
+        }
       }
     }
   }
@@ -142,7 +164,7 @@ export default ({ location }) => {
 
   return (
     <Layout location={location} title={title}>
-      <SEO title="All posts" />
+      <SEO title="Home" />
 
       <SectionWrapperHero>
         <section>
@@ -319,9 +341,6 @@ export default ({ location }) => {
             </li>
           </ul>
           <p>
-            <Link to="/contact" className="btn" title="contact me">
-              Get in touch
-            </Link>
             <Link to="/about" className="btn" title="about me">
               More about me
             </Link>

@@ -35,6 +35,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     color: var(--color-dark);
     background: var(--color-light);
+    min-width: 330px;
   }
 
   a,
@@ -66,7 +67,8 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  @media (prefers-color-scheme: light) {
+  ${
+    "" /* @media (prefers-color-scheme: light) {
     :root {
       --color: var(--color-dark);
       --background: var(--color-light);
@@ -82,6 +84,23 @@ const GlobalStyles = createGlobalStyle`
     blockquote {
       color: #bbb;
       border-left-color: #444;
+    }
+  } */
+  }
+
+  :root {
+    --color: var(--color-light);
+    --background: var(--color-dark);
+  }
+
+  blockquote {
+    color: #bbb;
+    border-left-color: #444;
+  }
+
+  @media (max-width: 420px) {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: ${rhythm(.5)};
     }
   }
 `
@@ -106,6 +125,12 @@ const SectionWrapper = styled.div`
     max-width: ${rhythm(24)};
     margin: 0 auto;
     padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+  }
+
+  @media (max-width: 420px) {
+    & > section {
+      padding: ${rhythm(.75)} ${rhythm(1 / 2)};
+    }
   }
 `
 

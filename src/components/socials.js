@@ -11,6 +11,7 @@ const SocialList = styled.ul`
   justify-content: center;
   align-items: center;
   list-style: none;
+  margin: 0;
 `
 
 const SocialItem = styled.li`
@@ -39,7 +40,7 @@ const Socials = ({props}) => {
         </a>
       </SocialItem>
       <SocialItem>
-        <a href="http://github.com/productbymark">
+        <a href="http://github.com/markrall">
           <svg className="icon icon-github">
             <use xlinkHref={socialIcons + "#icon-github"}></use>
           </svg>

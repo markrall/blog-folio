@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
-import SEO from "../components/seo"
+import SEO from "../components/SEO/seo"
 import { rhythm } from "../utils/typography"
 import PostMeta from "../components/post-meta"
 import { SectionWrapper } from "../components/global-styles"
@@ -14,11 +14,11 @@ const Portfolio = ({ data, location }) => {
 
   return (
     <Layout location={location} title={title}>
-      <SEO title="All projects" />
+      <SEO title="Portfolio" />
 
       <SectionWrapper>
         <section className="featuredProjects">
-          <h2>Portfolio</h2>
+          <h1>Portfolio</h1>
 
           {data.allMdx.nodes.map(
             ({ excerpt, frontmatter, fields, timeToRead }) => {

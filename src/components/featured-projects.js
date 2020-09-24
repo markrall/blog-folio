@@ -15,8 +15,12 @@ const FeaturedProjectStyles = styled.section`
 
     & > article {
       min-width: ${rhythm(6)};
-      max-width: ${rhythm(8)};
-      margin: ${rhythm(1)};
+      max-width: ${rhythm(10)};
+      margin: ${rhythm(1)} ${rhythm(0.5)};
+    }
+
+    @media (max-width: 420px) {
+      max-width: ${rhythm(12)};
     }
   }
 `
