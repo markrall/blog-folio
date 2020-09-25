@@ -2,10 +2,10 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from "../../../utils/typography"
 import styled from 'styled-components'
 
-import PostMeta from "./PostMeta/PostMeta"
+import PostMeta from "../../PostMeta/PostMeta"
 
 const FeaturedProjectStyles = styled.section`
   & > section {
@@ -45,6 +45,7 @@ const FeaturedProjects = () => {
           timeToRead
           frontmatter {
             title
+            description
             date(formatString: "MMMM Do, YYYY")
             cover {
               publicURL
@@ -76,13 +77,16 @@ const FeaturedProjects = () => {
               <article key={fields.slug}>
                 <header>
                   {!!frontmatter.cover ? (
-                    <Image
-                      fluid={frontmatter.cover.childImageSharp.fluid}
-                      alt={frontmatter.cover.name}
-                    />
+                    <Link to={fields.slug}>
+                      <Image
+                        fluid={frontmatter.cover.childImageSharp.fluid}
+                        alt={frontmatter.cover.name}
+                      />
+                    </Link>
                   ) : null}
                   <h3
                     style={{
+                      marginTop: rhythm(3 / 4),
                       marginBottom: rhythm(1 / 4),
                     }}
                   >

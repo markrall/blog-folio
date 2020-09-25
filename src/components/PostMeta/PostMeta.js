@@ -23,9 +23,10 @@ const PostMetaStyles = styled.p`
     box-shadow: none;
     color: var(--color-dark);
     margin: 0 ${rhythm(0.15)};
-    padding: ${rhythm(0.15)} ${rhythm(0.25)};
+    padding: ${rhythm(0.05)} ${rhythm(0.15)};
+    text-decoration: none;
     text-shadow: none;
-    transition: filter 0.3s;
+    transition: filter 0.2s;
   }
 
   &:hover {

@@ -1,12 +1,12 @@
 ---
 title: Nexter
 date: "2020-08-08"
-description: "Realestate agency website project"
+description: "Part 3 of the Advanced CSS and Sass: Flexbox, Grid, Animations and More! on Udemy. This project involved building a realestate agency website using CSS Grids"
 cover: ./cover.jpg
-repo: "https://github.com/markrall/nexter"
-site: "https://nexter.netlify.app/"
+repo: https://github.com/markrall/nexter
+site: https://nexter.netlify.app/
 category: "portfolio"
-tags: ["HTML", "CSS", "SCSS", "Grid"]
+tags: ["Grid"]
 featured: true
 published: true
 ---

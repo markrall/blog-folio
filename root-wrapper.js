@@ -1,5 +1,5 @@
 import { MDXProvider } from "@mdx-js/react"
-import Code from "./src/components/code"
+import Code from "./src/components/Code/Code"
 import React from "react"
 
 const components = {

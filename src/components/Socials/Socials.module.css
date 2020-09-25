@@ -1,0 +1,23 @@
+.social-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+}
+
+.social-item {
+  margin: 0 .875rem;
+}
+
+.social-item a {
+  box-shadow: none;
+}
+
+.social-item svg {
+  display: inline-block;
+  fill: var(--color);
+  height: 1.75rem;
+  width: 1.75rem;
+}

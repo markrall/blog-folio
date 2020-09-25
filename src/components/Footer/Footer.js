@@ -1,23 +1,12 @@
-import React from "react"
+import React from 'react';
 
-import { rhythm } from "../../utils/typography"
-import styled from "styled-components"
-
-const FooterStyles = styled.footer`
-  background-color: var(--background);
-  color: #666;
-  padding: ${rhythm(0.75)} ${rhythm(3 / 4)};
-
-  & p {
-    text-align:right;
-  }
-`
+import styles from './Footer.module.css';
 
 const Footer = () => {
   return (
-    <FooterStyles>
-      <p>© {new Date().getFullYear()}</p>
-    </FooterStyles>
+    <footer className={styles.siteFooter}>
+      <p>© {new Date().getFullYear()} markrall.dev</p>
+    </footer>
   )
 }
 

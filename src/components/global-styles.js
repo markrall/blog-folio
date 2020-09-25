@@ -48,25 +48,6 @@ const GlobalStyles = createGlobalStyle`
     filter: brightness(.8);
   }
 
-  .btn {
-    &,
-    &:link,
-    &:visited {
-      background: linear-gradient(rgba(217, 3, 104, 1), rgba(130, 2, 99, 1));
-      border: 1px solid var(--color-accent-1);
-      box-shadow: none;
-      border-radius: 3px;
-      color: var(--color);
-      padding: ${rhythm(0.25)} ${rhythm(0.75)};
-      text-shadow: 2px 2px 2px rgba(8, 7, 8, 0.25);
-      transition: all .3s;
-    }
-
-    &:active {
-      background: linear-gradient(rgba(217, 3, 104, .85), rgba(130, 2, 99, .85));
-    }
-  }
-
   ${
     "" /* @media (prefers-color-scheme: light) {
     :root {

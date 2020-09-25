@@ -7,8 +7,9 @@ import Layout from "../components/Layout/Layout"
 import { rhythm } from "../utils/typography"
 import styled from 'styled-components'
 import { SectionWrapper } from '../components/global-styles'
+import Button from '../components/UI/Button/Button';
 
-import Socials from '../components/socials'
+import Socials from '../components/Socials/Socials'
 
 const ContactFormStyles = styled.div``
 
@@ -166,13 +167,13 @@ const Contact = ({ location }) => {
                   ></TextArea>
                 </Label>
               </FormGroup>
-              <button
+              <Button
                 type="submit"
                 className="btn btn-primary"
                 disabled={serverState.submitting}
               >
                 Submit
-              </button>
+              </Button>
             </form>
           </ContactFormStyles>
         </section>

@@ -24,7 +24,7 @@ const Portfolio = ({ data, location }) => {
             ({ excerpt, frontmatter, fields, timeToRead }) => {
               const title = frontmatter.title || fields.slug
               return (
-                <article key={fields.slug} style={{ marginBottom: "10rem"}}>
+                <article key={fields.slug} style={{ marginBottom: rhythm(4) }}>
                   <header>
                     {!!frontmatter.cover ? (
                       <Link to={fields.slug}>
@@ -36,6 +36,7 @@ const Portfolio = ({ data, location }) => {
                     ) : null}
                     <h3
                       style={{
+                        marginTop: rhythm(1),
                         marginBottom: rhythm(1 / 4),
                       }}
                     >
@@ -49,7 +50,11 @@ const Portfolio = ({ data, location }) => {
                     />
                   </header>
                   <section>
-                    <p>{frontmatter.description}</p>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: frontmatter.description || excerpt,
+                      }}
+                    />
                   </section>
                 </article>
               )

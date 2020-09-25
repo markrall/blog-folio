@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Image from "gatsby-image"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
-import Bio from "../components/bio"
+import Bio from "../components/Bio/bio"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/seo"
 import { rhythm } from "../utils/typography"

@@ -1,12 +1,12 @@
 ---
 title: Natours
 date: "2020-08-04"
-description: "Travel website project"
+description: "Part 1 of the Advanced CSS and Sass: Flexbox, Grid, Animations and More! on Udemy. This project involved building a nature travel website using SASS"
 cover: ./cover.jpg
-repo: "https://github.com/markrall/natours"
-site: "https://natours.netlify.app/"
+repo: https://github.com/markrall/natours
+site: https://natours.netlify.app/
 category: "portfolio"
-tags: ["HTML", "CSS", "SCSS", "Animations", "NPM"]
+tags: ["SCSS"]
 featured: true
 published: true
 ---

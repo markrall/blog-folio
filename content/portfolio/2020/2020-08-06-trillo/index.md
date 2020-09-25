@@ -1,12 +1,12 @@
 ---
 title: Trillo
 date: "2020-08-06"
-description: "Hotel Site"
+description: "Part 2 of the Advanced CSS and Sass: Flexbox, Grid, Animations and More! on Udemy. This project involved building a hotel ratings site using CSS Flexbox"
 cover: ./cover.jpg
-repo: "https://github.com/markrall/trillo"
-site: "https://trillo.netlify.app/"
+repo: https://github.com/markrall/trillo
+site: https://trillo.netlify.app/
 category: "portfolio"
-tags: ["HTML", "CSS", "SCSS", "SVG", "Flexbox"]
+tags: ["Flexbox"]
 featured: true
 published: true
 ---

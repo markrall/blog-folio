@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from 'gatsby';
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
@@ -7,10 +6,11 @@ import SEO from "../components/SEO/seo"
 
 import { rhythm } from '../utils/typography'
 import styled from 'styled-components'
-import FeaturedProjects from "../components/featured-projects"
-import FeaturedPosts from "../components/featured-posts"
+import FeaturedProjects from "../components/Feature/FeaturedProjects/FeaturedProjects"
+import FeaturedPosts from "../components/Feature/FeaturedPosts/FeaturedPosts"
 import { SectionWrapper } from "../components/global-styles"
 import List from '../components/UI/List/List';
+import Button from '../components/UI/Button/Button'
 
 const SectionWrapperHighlight = styled(SectionWrapper)`
   background: var(--gradient-section-highlight);
@@ -88,10 +88,9 @@ const About = ({ data, location }) => {
           </p>
 
           <p>
-            Interested to find out more?
-            <Link to="/contact" className="btn" style={{ margin: '0 1rem'}} title="contact me">
-              Get in touch!
-            </Link>
+            <Button to="/contact" title="contact" elem="link">
+              Let's chat!
+            </Button>
           </p>
         </section>
 
