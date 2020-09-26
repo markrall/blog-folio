@@ -7,16 +7,16 @@ import styled from 'styled-components'
 
 import PostMeta from "../../PostMeta/PostMeta"
 
-const FeaturedProjectStyles = styled.section`
+const FeaturedProjectStyles = styled.div`
   & > section {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-evenly;
 
     & > article {
       min-width: ${rhythm(6)};
       max-width: ${rhythm(10)};
-      margin: ${rhythm(1)} ${rhythm(0.5)};
+      margin: ${rhythm(1)} ${rhythm(.15)};
     }
 
     @media (max-width: 420px) {

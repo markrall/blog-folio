@@ -6,7 +6,9 @@ import { Link, graphql } from "gatsby"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/seo"
-// import { rhythm } from "../utils/typography"
+import { rhythm } from "../utils/typography"
+import PostMeta from "../components/PostMeta/PostMeta"
+import { SectionWrapper } from "../components/global-styles"
 
 const Tags = ({ pageContext, data, location }) => {
   const { title } = useSiteMetadata()
@@ -19,20 +21,41 @@ const Tags = ({ pageContext, data, location }) => {
   return (
     <Layout title={title} location={location}>
       <SEO title="All tags" />
-      <h1>{tagHeader}</h1>
+      <SectionWrapper>
+        <section>
+          <h1>{tagHeader}</h1>
+          {edges.map(({ node }) => {
+            const { slug } = node.fields
+            const { frontmatter } = node
+            const { timeToRead, excerpt } = node
 
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
-
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
+            return (
+              <article key={slug}>
+                <header>
+                  <h2
+                    style={{
+                      marginTop: rhythm(1),
+                      marginBottom: rhythm(1 / 4),
+                    }}
+                  >
+                    <Link style={{ boxShadow: `none` }} to={slug}>
+                      {frontmatter.title}
+                    </Link>
+                  </h2>
+                  <PostMeta frontmatter={frontmatter} timeToRead={timeToRead} />
+                </header>
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: frontmatter.description || excerpt,
+                    }}
+                  />
+                </section>
+              </article>
+            )
+          })}
+        </section>
+      </SectionWrapper>
     </Layout>
   )
 }
@@ -72,11 +95,17 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          fields {
-            slug
-          }
+          id
+          excerpt(pruneLength: 250)
+          timeToRead
           frontmatter {
             title
+            description
+            date(formatString: "MMMM Do, YYYY")
+            tags
+          }
+          fields {
+            slug
           }
         }
       }

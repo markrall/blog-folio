@@ -44,7 +44,7 @@ const PostMeta = ({ frontmatter, timeToRead }) => {
       <small className="meta-item">
         {frontmatter.tags.map(tag => {
           return (
-            <Link key={tag} to={`/tags/${tag}/`} className="pill">
+            <Link key={tag} to={`/tags/${tag.toLowerCase()}/`} className="pill">
               {tag}
             </Link>
           )

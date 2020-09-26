@@ -6,7 +6,7 @@ cover: ./cover.jpg
 repo: https://github.com/markrall/nexter
 site: https://nexter.netlify.app/
 category: "portfolio"
-tags: ["Grid"]
+tags: ["grid", "responsive"]
 featured: true
 published: true
 ---

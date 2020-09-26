@@ -6,7 +6,7 @@ import styles from './Button.module.css';
 const Button = ( props ) => {
   let button;
   button =
-    props.elem === "link" ? (
+    props.to ? (
       <Link
         className={styles.btn}
         target={props.target ? props.target : "_self"}

@@ -6,7 +6,7 @@ cover: ./cover.jpg
 repo: https://github.com/markrall/natours
 site: https://natours.netlify.app/
 category: "portfolio"
-tags: ["SCSS"]
+tags: ["scss", "npm", "responsive"]
 featured: true
 published: true
 ---

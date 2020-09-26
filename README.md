@@ -16,8 +16,6 @@
 
 ## Roadmap
 
-[ ] Customise [typography.js](https://www.gatsbyjs.com/docs/typography-js/) theme
-
 [ ] Add support for auto dark/light mode using `prefers-color-scheme` and UI toggle
 
 [ ] Refactor styled-components to CSS Modules
@@ -31,4 +29,6 @@
 [ ] Add related posts component based on [this post](https://khalilstemmler.com/articles/gatsby-related-posts-component/)
 
 [ ] Refactor contact form into a reusable component and add recaptcha - https://getform.io/docs/collecting-submissions/spam-filtering-with-recaptcha
+
+[*] Customise [typography.js](https://www.gatsbyjs.com/docs/typography-js/) theme
 

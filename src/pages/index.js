@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { SectionWrapper } from '../components/global-styles';
 import FeaturedProjects from "../components/Feature/FeaturedProjects/FeaturedProjects"
 import FeaturedPosts from "../components/Feature/FeaturedPosts/FeaturedPosts"
+import SectionHighlight from '../components/UI/SectionHighlight/SectioHightlight';
 import List from "../components/UI/List/List"
 import HorizontalList from '../components/UI/List/HorizontalList/HorizontalList';
 import Button from '../components/UI/Button/Button';
@@ -44,22 +45,27 @@ const SectionWrapperHero = styled(SectionWrapper)`
   }
 
   & .display {
-    letter-spacing: -2px;
-    word-spacing: .25rem;
+    letter-spacing: -3px;
+    word-spacing: 0.25rem;
   }
 
   @media (max-width: 420px) {
     background: bottom 10% right 15%, var(--gradient-bottom);
     min-height: 84vh;
 
+    & .display {
+      letter-spacing: -2px;
+      word-spacing: 0.25rem;
+    }
+
     & h2 {
       font-size: ${rhythm(1.25)};
-      line-height: ${rhythm(2)};
+      line-height: ${rhythm(1.75)};
     }
 
     & h3 {
       font-size: ${rhythm(0.85)};
-      line-height: ${rhythm(1.5)};
+      line-height: ${rhythm(1.25)};
     }
   }
 `
@@ -149,16 +155,6 @@ const SectionWrapperAbout = styled(SectionWrapper)`
     }
   }
 `
-const SectionWrapperHighlight = styled(SectionWrapper)`
-  background: var(--gradient-section-highlight);
-  color: var(--color-light);
-  text-shadow: 2px 2px 2px rgba(8, 7, 8, 0.25);
-
-  & > section {
-    max-width: ${rhythm(36)};
-  }
-`
-
 export default ({ location }) => {
   const { title, tagline } = useSiteMetadata()
 
@@ -351,16 +347,16 @@ export default ({ location }) => {
             </li>
           </ul>
           <p>
-            <Button to="/about" title="about me" elem="link">
+            <Button to="/about" title="about me">
               More about me &rarr;
             </Button>
           </p>
         </section>
       </SectionWrapperAbout>
 
-      <SectionWrapperHighlight>
+      <SectionHighlight>
         <FeaturedProjects />
-      </SectionWrapperHighlight>
+      </SectionHighlight>
 
       <SectionWrapper>
         <FeaturedPosts />

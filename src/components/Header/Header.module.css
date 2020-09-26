@@ -68,6 +68,10 @@ nav a.active {
 }
 
 @media (max-width: 420px) {
+  .SiteHeaderWrapper {
+    position: relative;
+  }
+
   .SiteHeader {
     flex-flow: column wrap;
   }

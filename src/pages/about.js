@@ -4,24 +4,12 @@ import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/seo"
 
-import { rhythm } from '../utils/typography'
-import styled from 'styled-components'
 import FeaturedProjects from "../components/Feature/FeaturedProjects/FeaturedProjects"
 import FeaturedPosts from "../components/Feature/FeaturedPosts/FeaturedPosts"
+import SectionHighlight from '../components/UI/SectionHighlight/SectioHightlight';
 import { SectionWrapper } from "../components/global-styles"
 import List from '../components/UI/List/List';
 import Button from '../components/UI/Button/Button'
-
-const SectionWrapperHighlight = styled(SectionWrapper)`
-  background: var(--gradient-section-highlight);
-  color: var(--color-light);
-  min-height: 90vh;
-  text-shadow: 2px 2px 2px rgba(8, 7, 8, 0.25);
-
-  & > section {
-    max-width: ${rhythm(36)};
-  }
-`
 
 const About = ({ data, location }) => {
   const { title } = useSiteMetadata()
@@ -88,7 +76,7 @@ const About = ({ data, location }) => {
           </p>
 
           <p>
-            <Button to="/contact" title="contact" elem="link">
+            <Button to="/contact" title="contact">
               Let's chat!
             </Button>
           </p>
@@ -311,9 +299,9 @@ const About = ({ data, location }) => {
           </List>
         </section>
 
-        <SectionWrapperHighlight>
+        <SectionHighlight>
           <FeaturedProjects />
-        </SectionWrapperHighlight>
+        </SectionHighlight>
 
         <FeaturedPosts />
       </SectionWrapper>

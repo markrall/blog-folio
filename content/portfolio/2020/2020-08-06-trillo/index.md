@@ -6,7 +6,7 @@ cover: ./cover.jpg
 repo: https://github.com/markrall/trillo
 site: https://trillo.netlify.app/
 category: "portfolio"
-tags: ["Flexbox"]
+tags: ["flexbox", "responsive"]
 featured: true
 published: true
 ---
