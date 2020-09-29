@@ -10,6 +10,10 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+import favicon16 from "../../../static/favicon16.png"
+import favicon32 from "../../../static/favicon32.png"
+import favicon64 from "../../../static/favicon64.png"
+
 const SEO = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -72,6 +76,21 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
       ].concat(meta)}
+      link={[
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: `${favicon16}`,
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: `${favicon32}`,
+        },
+        { rel: "shortcut icon", type: "image/png", href: `${favicon64}` },
+      ]}
     />
   )
 }

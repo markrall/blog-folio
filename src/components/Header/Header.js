@@ -10,9 +10,9 @@ const Header = ({ title, location }) => {
 
   const data = useStaticQuery(graphql`
     query {
-      logo: file(absolutePath: { regex: "/productbymark-icon.png/" }) {
+      logo: file(absolutePath: { regex: "/site-logo@1x.png/" }) {
         childImageSharp {
-          fixed(width: 64, height: 64) {
+          fixed(width: 48, height: 48) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -27,7 +27,6 @@ const Header = ({ title, location }) => {
           <Image
             className="site-logo"
             fixed={data.logo.childImageSharp.fixed}
-            alt={title}
           />
         </Link>
         <nav>

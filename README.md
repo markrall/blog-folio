@@ -16,9 +16,11 @@
 
 ## Roadmap
 
+[ ] Fig SVG icons not displaying in OS X Safari or on all browsers under iOS
+
 [ ] Add support for auto dark/light mode using `prefers-color-scheme` and UI toggle
 
-[ ] Refactor styled-components to CSS Modules
+[ ] Refactor styled-components to CSS Modules. Consider removing typography.js
 
 [ ] Refactor file structure to bundle components
 
@@ -27,6 +29,8 @@
 [ ] Add a [sitemap](https://www.gatsbyjs.com/docs/creating-a-sitemap/)
 
 [ ] Add related posts component based on [this post](https://khalilstemmler.com/articles/gatsby-related-posts-component/)
+
+[ ] Refactor portfolio & blog templates to consolidate reusable code
 
 [ ] Refactor contact form into a reusable component and add recaptcha - https://getform.io/docs/collecting-submissions/spam-filtering-with-recaptcha
 

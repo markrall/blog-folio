@@ -12,7 +12,7 @@ const siteMetadata = {
   siteUrl: `https://markrall.dev/`,
   author: {
     name: `Mark Rall`,
-    summary: `who lives and works in Victoria, Australia building useful things.`,
+    summary: `who lives and works in Melbourne, Australia building useful things`,
     social: {
       twitter: `marksrall`,
     },

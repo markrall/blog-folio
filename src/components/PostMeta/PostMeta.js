@@ -50,7 +50,7 @@ const PostMeta = ({ frontmatter, timeToRead }) => {
           )
         })}
       </small>
-      {!!frontmatter.repo ? (
+      {!!frontmatter.repo && !!frontmatter.site ? (
         <>
           <small className="meta-item">
             <a
