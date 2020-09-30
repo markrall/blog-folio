@@ -7,15 +7,15 @@ import { rhythm } from '../utils/typography';
 import styled from 'styled-components';
 
 import { SectionWrapper } from '../components/global-styles';
-import FeaturedProjects from "../components/Feature/FeaturedProjects/FeaturedProjects"
-import FeaturedPosts from "../components/Feature/FeaturedPosts/FeaturedPosts"
+import FeaturedProjects from "../components/Featured/FeaturedProjects/FeaturedProjects"
+import FeaturedPosts from "../components/Featured/FeaturedPosts/FeaturedPosts"
 import SectionHighlight from '../components/UI/SectionHighlight/SectioHightlight';
 import List from "../components/UI/List/List"
 import HorizontalList from '../components/UI/List/HorizontalList/HorizontalList';
 import Button from '../components/UI/Button/Button';
 
 import heroBg from '../../content/assets/homepage-hero-bg.png';
-import aboutIcons from '../../content/assets/svg/icon-sprite.svg';
+import { icoSearch, icoQuill, icoEmbed, icoRocket, icoMeter, icoEnlarge, icoPower, icoHappy } from '../components/UI/Icons/Icons';
 
 const SectionWrapperHero = styled(SectionWrapper)`
   background: url(${heroBg}) no-repeat bottom 10% right 15%,
@@ -128,7 +128,7 @@ const SectionWrapperAbout = styled(SectionWrapper)`
           width: ${rhythm(3)};
           height: ${rhythm(3)};
 
-          & .icon {
+          & svg {
             display: inline-block;
             width: ${rhythm(1)};
             height: ${rhythm(1)};
@@ -220,9 +220,7 @@ export default ({ location }) => {
           <ul className="section-about__list">
             <li>
               <div className="icon-wrapper">
-                <svg className="icon icon-search">
-                  <use xlinkHref={aboutIcons + "#icon-search"}></use>
-                </svg>
+                {icoSearch}
               </div>
 
               <h4>Research</h4>
@@ -238,9 +236,7 @@ export default ({ location }) => {
             </li>
             <li>
               <div className="icon-wrapper">
-                <svg className="icon icon-quill">
-                  <use xlinkHref={aboutIcons + "#icon-quill"}></use>
-                </svg>
+                {icoQuill}
               </div>
 
               <h4>Design</h4>
@@ -256,9 +252,7 @@ export default ({ location }) => {
             </li>
             <li>
               <div className="icon-wrapper">
-                <svg className="icon icon-embed2">
-                  <use xlinkHref={aboutIcons + "#icon-embed2"}></use>
-                </svg>
+                {icoEmbed}
               </div>
 
               <h4>Build</h4>
@@ -275,9 +269,7 @@ export default ({ location }) => {
             </li>
             <li>
               <div className="icon-wrapper">
-                <svg className="icon icon-rocket">
-                  <use xlinkHref={aboutIcons + "#icon-rocket"}></use>
-                </svg>
+                {icoRocket}
               </div>
 
               <h4>Launch</h4>
@@ -306,9 +298,7 @@ export default ({ location }) => {
           <ul className="section-about__list">
             <li>
               <div className="icon-wrapper">
-                <svg className="icon icon-meter">
-                  <use xlinkHref={aboutIcons + "#icon-meter"}></use>
-                </svg>
+                {icoMeter}
               </div>
               <h4>Fast</h4>
               <p>
@@ -317,27 +307,21 @@ export default ({ location }) => {
             </li>
             <li>
               <div className="icon-wrapper">
-                <svg className="icon icon-enlarge2">
-                  <use xlinkHref={aboutIcons + "#icon-enlarge2"}></use>
-                </svg>
+                {icoEnlarge}
               </div>
               <h4>Responsive</h4>
               <p>My layouts will work on any device, big or small.</p>
             </li>
             <li>
               <div className="icon-wrapper">
-                <svg className="icon icon-happy">
-                  <use xlinkHref={aboutIcons + "#icon-happy"}></use>
-                </svg>
+                {icoHappy}
               </div>
               <h4>Intuitive</h4>
               <p>Strong preference for easy to use, intuitive UX/UI.</p>
             </li>
             <li>
               <div className="icon-wrapper">
-                <svg className="icon icon-power">
-                  <use xlinkHref={aboutIcons + "#icon-power"}></use>
-                </svg>
+                {icoPower}
               </div>
               <h4>Dynamic</h4>
               <p>

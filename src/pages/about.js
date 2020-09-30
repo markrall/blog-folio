@@ -4,8 +4,8 @@ import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/seo"
 
-import FeaturedProjects from "../components/Feature/FeaturedProjects/FeaturedProjects"
-import FeaturedPosts from "../components/Feature/FeaturedPosts/FeaturedPosts"
+import FeaturedProjects from "../components/Featured/FeaturedProjects/FeaturedProjects"
+import FeaturedPosts from "../components/Featured/FeaturedPosts/FeaturedPosts"
 import SectionHighlight from '../components/UI/SectionHighlight/SectioHightlight';
 import { SectionWrapper } from "../components/global-styles"
 import List from '../components/UI/List/List';
