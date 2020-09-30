@@ -46,7 +46,7 @@ const FeaturedProjects = () => {
           frontmatter {
             title
             description
-            date(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMM Do, YYYY")
             cover {
               publicURL
               name
@@ -57,6 +57,8 @@ const FeaturedProjects = () => {
               }
             }
             tags
+            site
+            repo
           }
           fields {
             slug

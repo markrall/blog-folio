@@ -1,0 +1,43 @@
+.Tags {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Tags li {
+  margin: 0;
+  padding: 0;
+}
+
+.Tags a,
+.Tags a:link,
+.Tags a:active,
+.Tags a:visited {
+  background-color: var(--color-accent-3);
+  border-radius: 1px;
+  box-shadow: none;
+  color: var(--color-dark);
+  margin: 0 .075rem;
+  padding: .1rem .35rem;
+  text-decoration: none;
+  text-shadow: none;
+  transition: filter 0.2s;
+}
+
+.Tags a:hover {
+  filter: brightness(1.1);
+}
+
+@media only screen and (max-width: 420px) {
+  .Tags a ,
+  .Tags a:link,
+  .Tags a:active,
+  .Tags a:visited {
+    margin: 0 .25rem;
+    padding: .25rem .5rem;
+  }  
+}
+
+

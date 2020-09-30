@@ -15,6 +15,7 @@ The online porfolio is the most basic, relevant tool that any creative, designer
 
 [markrall.dev](https://markrall.dev/) is just that, a way to showcase skills as I acquire them and an opportunity to explore  technologies.
 
+<!-- benefits of the JAM stack https://opensource.com/article/20/9/jamstack -->
 I selected Gatsby for this project to learn more about the JAM Stack, React and Graphql, while having the benefits of integrated development tooling.
 
 Content is marked up using Markdown, my preferred method for writing content for multiple medium. Mardown suits my workflow. Future iterations of the site may use one of the many (headless CMS solutions)[https://dev.to/integridsolutions/best-serverless-cms-for-2020-27jb] like Contentful, Sanity.io, and Netlify to name a couple. 

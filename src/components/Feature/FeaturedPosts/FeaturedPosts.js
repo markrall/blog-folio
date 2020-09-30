@@ -2,9 +2,9 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 
-import { rhythm } from "../../../utils/typography"
+import { rhythm } from "../../../utils/typography";
 
-import PostMeta from '../../PostMeta/PostMeta'
+import PostMeta from '../../PostMeta/PostMeta';
 
 const FeaturedPosts = () => {
   const data = useStaticQuery(graphql`
@@ -26,7 +26,7 @@ const FeaturedPosts = () => {
           timeToRead
           frontmatter {
             title
-            date(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMM Do, YYYY")
             cover {
               publicURL
               name
