@@ -1,18 +1,18 @@
-import React from "react"
+import React from 'react';
 
-import Header from "../Header/Header"
-import Footer from "../Footer/Footer"
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
-import { GlobalStyles, Container, Main } from "../global-styles"
+import '../../assets/styles/global-styles.css';
+import styles from './Layout.module.css';
 
 const Layout = ({ location, title, children }) => {
   return (
-    <Container>
-      <GlobalStyles />
+    <div className={styles.Container}>
       <Header title={title} location={location} />
-      <Main>{children}</Main>
+      <main className={styles.Main}>{children}</main>
       <Footer />
-    </Container>
+    </div>
   )
 }
 

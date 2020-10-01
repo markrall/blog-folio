@@ -3,23 +3,8 @@ import React from "react"
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/seo"
-import { rhythm } from "../utils/typography"
-import styled from "styled-components"
 
-const SectionWrapper = styled.div`
-  background-color: ${props =>
-    props.primary ? "var(--color-light)" : "var(--color-dark)"};
-  color: ${props => (props.primary ? "var(--color-light)" : "var(--color)")};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: ${props => (props.fullHeight ? "90vh" : "50vh")};
-
-  & > section {
-    max-width: ${rhythm(24)};
-    padding: ${rhythm(0.5)} ${rhythm(0.25)};
-  }
-`
+import SectionWrapper from "../components/Layout/Section/SectionWrapper/SectionWrapper"
 
 const NotFoundPage = ({ location }) => {
   const { title } = useSiteMetadata();

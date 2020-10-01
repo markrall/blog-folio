@@ -5,7 +5,9 @@ import { icoGitHub, icoEarth } from "../UI/Icons/Icons";
 
 import styles from "./PostMeta.module.css";
 
-const PostMeta = ({ frontmatter, timeToRead }) => {
+const PostMeta = props => {
+  const { frontmatter, timeToRead } = props.postMetaData;
+  
   return (
     <ul className={styles.PostMeta}>
       <li>
@@ -15,7 +17,7 @@ const PostMeta = ({ frontmatter, timeToRead }) => {
           </li>
           <li className={styles.metaItem}>
             <small>
-              {timeToRead} {timeToRead === 1 ? "min" : "mins"}
+              {timeToRead} {timeToRead === 1 ? "min" : "mins"} read
             </small>
           </li>
           <li className={styles.metaItem}>

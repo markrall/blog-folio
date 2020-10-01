@@ -1,0 +1,16 @@
+.SectionWrapper {
+  background-color: var(--background);
+  color: var(--color);
+}
+
+.SectionWrapper > section {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+@media (max-width: 420px) {
+  .SectionWrapper > section {
+    padding: 1.25rem .75rem;
+  }
+}

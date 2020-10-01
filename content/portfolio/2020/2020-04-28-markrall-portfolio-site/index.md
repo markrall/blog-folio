@@ -1,7 +1,7 @@
 ---
 title: Personal Portfolio
 date: "2020-08-28"
-description: "My own personal portfolio built on the Gatsby and a customised version of the Starter Blog."
+description: "My own personal portfolio built on the Gatsby and a heavily customised version of the Starter Blog theme."
 cover: ./cover.jpg
 repo: https://github.com/markrall/dev.markrall
 site: https://markrall.dev/

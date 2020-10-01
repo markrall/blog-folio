@@ -4,10 +4,10 @@ import Image from "gatsby-image"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
+import SectionWrapper from "../components/Layout/Section/SectionWrapper/SectionWrapper"
 import SEO from "../components/SEO/seo"
 import { rhythm } from "../utils/typography"
 import PostMeta from "../components/PostMeta/PostMeta"
-import { SectionWrapper } from "../components/global-styles"
 
 const Portfolio = ({ data, location }) => {
   const { title } = useSiteMetadata()
@@ -17,7 +17,7 @@ const Portfolio = ({ data, location }) => {
       <SEO title="Portfolio" />
 
       <SectionWrapper>
-        <section className="featuredProjects">
+        <section>
           <h1>Portfolio</h1>
 
           {data.allMdx.nodes.map(
@@ -44,10 +44,7 @@ const Portfolio = ({ data, location }) => {
                         {title}
                       </Link>
                     </h3>
-                    <PostMeta
-                      frontmatter={frontmatter}
-                      timeToRead={timeToRead}
-                    />
+                    <PostMeta postMetaData={{ frontmatter, timeToRead }} />
                   </header>
                   <section>
                     <p
@@ -86,7 +83,8 @@ export const pageQuery = graphql`
         timeToRead
         frontmatter {
           title
-          date(formatString: "MMMM Do, YYYY")
+          description
+          date(formatString: "MMM Do, YYYY")
           cover {
             publicURL
             name
@@ -97,7 +95,8 @@ export const pageQuery = graphql`
             }
           }
           tags
-          description
+          site
+          repo
         }
         fields {
           slug

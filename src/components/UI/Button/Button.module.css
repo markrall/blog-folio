@@ -1,6 +1,6 @@
-.btn,
-.btn:link,
-.btn:visited {
+.Button,
+.Button:link,
+.Button:visited {
   align-items: center;
   background: linear-gradient(
     rgba(217, 3, 104, 1), rgba(130, 2, 99, 1));
@@ -25,11 +25,11 @@
   white-space: nowrap;
 }
 
-.btn:hover,
-.btn:focus {
+.Button:hover,
+.Button:focus {
   filter: brightness(.85);
 }
 
-.btn:active {
+.Button:active {
   box-shadow: 0 0 0 transparent;
 }

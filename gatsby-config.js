@@ -12,9 +12,13 @@ const siteMetadata = {
   siteUrl: `https://markrall.dev/`,
   author: {
     name: `Mark Rall`,
-    summary: `who lives and works in Melbourne, Australia building useful things`,
+    summary: `who lives and works in Melbourne, Australia building useful things for the web`,
     social: {
       twitter: `marksrall`,
+      linkedin: `markrall`,
+      github: `markrall`,
+      codepen: `productbymark`,
+      instagram: `productbymark`,
     },
   },
 }
@@ -38,6 +42,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content`,
         name: `content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/images`,
+        name: `images`,
       },
     },
     `gatsby-remark-images`,
@@ -132,13 +143,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `markrall.dev`,
+        short_name: `mrdev`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#000000`,
+        theme_color: `#d90368`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `src/assets/images/site-logo/site-logo@2x.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

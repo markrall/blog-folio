@@ -1,14 +1,13 @@
 import React from "react"
-import PropTypes from "prop-types"
-
 import { Link, graphql } from "gatsby"
+import PropTypes from "prop-types"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
+import SectionWrapper from "../components/Layout/Section/SectionWrapper/SectionWrapper"
 import SEO from "../components/SEO/seo"
 import { rhythm } from "../utils/typography"
 import PostMeta from "../components/PostMeta/PostMeta"
-import { SectionWrapper } from "../components/global-styles"
 
 const Tags = ({ pageContext, data, location }) => {
   const { title } = useSiteMetadata()
@@ -42,7 +41,7 @@ const Tags = ({ pageContext, data, location }) => {
                       {frontmatter.title}
                     </Link>
                   </h2>
-                  <PostMeta frontmatter={frontmatter} timeToRead={timeToRead} />
+                  <PostMeta postMetaData={{ frontmatter, timeToRead }} />
                 </header>
                 <section>
                   <p

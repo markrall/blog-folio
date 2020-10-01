@@ -1,0 +1,125 @@
+/* @import-normalize; /* bring in normalize.css styles */
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --color: var(--color-dark);
+    --background: var(--color-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: var(--color-light);
+    --background: var(--color-dark);
+  }
+} */
+
+:root {
+  --color: var(--color-light);
+  --background: var(--color-dark);  
+  --color-dark: rgba(8, 7, 8, 1);
+  --color-light: rgba(252, 252, 252, 1);
+  --color-accent-1: rgba(130, 2, 99, 1);
+  --color-accent-2: rgb(217, 3, 104);
+  --color-accent-3: rgba(246, 174, 40, 1);
+  --color-accent-4:  rgba(26, 200, 237, 1);
+  --color-accent-4:  rgba(247, 92, 3, 1);
+  --color-accent-5:  rgba(232, 232, 232, 1);
+  --color-accent-6:  rgba(239, 35, 60, 1);
+  --color-accent-7:  rgba(76, 185, 99, 1);
+
+  --gradient-bottom: linear-gradient(180deg, rgba(8, 7, 8, 1), rgba(130, 2, 99, 1), rgba(217, 3, 104, 1), rgba(246, 174, 40, 1));
+  --gradient-section-highlight: linear-gradient(45deg, rgba(130, 2, 99, 1), rgba(217, 3, 104, 1));
+}
+
+* {
+  border: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-dark);
+  background: var(--color-light);
+  min-width: 330px;
+}
+
+a,
+a:link,
+a:visited {
+  color: var(--color);
+}
+
+a:hover {
+  filter: brightness(.8);
+}
+
+blockquote {
+  color: #bbb;
+  border-left: 4px solid #444;
+  padding-left: 1rem;
+}
+
+.gatsby-image-wrapper {
+  border-radius: 3px;
+}
+
+.display {
+  letter-spacing: -3px;
+}
+
+h2.display {
+  font-size: 4.5rem;
+  line-height: 5.25rem;
+  word-spacing: 0.5rem;
+}
+
+h3.display {
+  font-size: 2rem;
+  line-height: 3rem;
+  word-spacing: 0.25rem;
+}
+
+h3.display.secondary {
+  font-weight: 300;
+}
+
+.cardGroup {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+  margin-bottom: 3rem;
+}
+
+.cardGroup > * {
+  width: 45%;
+  min-width: 12rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .cardGroup > * {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1rem;
+  }
+
+  h2.display {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    word-spacing: 0.5rem;
+  }
+
+  h3.display {
+    font-size: 1.5rem;
+    letter-spacing: -2px;
+    line-height: 2rem;
+    word-spacing: 0.25rem;
+  }
+}

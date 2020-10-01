@@ -1,0 +1,23 @@
+.SectionHero {
+  background: bottom var(--gradient-bottom);
+  background: url(../../../../assets/images/homepage-hero-bg.png) no-repeat bottom 10% right 15%,
+    var(--gradient-bottom);
+    background-size: 60%, 100%;
+  color: var(--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  text-shadow: 2px 2px 2px rgba(8, 7, 8, 0.25);
+}
+
+.SectionHero > * {
+  max-width: 48rem;
+  padding: 2.5rem 1.5rem;
+}
+
+@media only screen and (max-width: 420px) {
+  .SectionHero {
+    min-height: 84vh;
+  }
+}

@@ -4,10 +4,10 @@ import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/seo"
 
-import FeaturedProjects from "../components/Featured/FeaturedProjects/FeaturedProjects"
-import FeaturedPosts from "../components/Featured/FeaturedPosts/FeaturedPosts"
-import SectionHighlight from '../components/UI/SectionHighlight/SectioHightlight';
-import { SectionWrapper } from "../components/global-styles"
+import SectionWrapper from "../components/Layout/Section/SectionWrapper/SectionWrapper"
+import SectionHighlight from "../components/Layout/Section/SectionHighlight/SectioHightlight"
+import FeatureProjects from "../components/Feature/FeatureProjects/FeatureProjects"
+import FeaturePosts from "../components/Feature/FeaturePosts/FeaturePosts"
 import List from '../components/UI/List/List';
 import Button from '../components/UI/Button/Button'
 
@@ -300,10 +300,10 @@ const About = ({ data, location }) => {
         </section>
 
         <SectionHighlight>
-          <FeaturedProjects />
+          <FeatureProjects />
         </SectionHighlight>
 
-        <FeaturedPosts />
+        <FeaturePosts />
       </SectionWrapper>
     </Layout>
   )

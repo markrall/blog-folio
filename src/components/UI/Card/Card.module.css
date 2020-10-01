@@ -1,0 +1,44 @@
+.Card {
+  font-size: .875rem;
+  border-radius: 3px;
+  border: 1px solid #333;
+  background: linear-gradient(#222, #161616);
+  margin: 3.5rem .25rem .5rem .25rem;
+  padding: 0.875rem 0.875rem 1.75rem;
+  position: relative;
+}
+
+.Card .icon {
+  border-radius: 100%;
+  border: 1px solid #333;
+  background: linear-gradient(#222, #161616);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: -2rem;
+  transform: translateX(-50%);
+  padding: 0.4375rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.Card svg {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 0px;
+  stroke: var(--color-accent-3);
+  fill: var(--color-accent-2);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Card h4 {
+  color: var(--color-accent-3);
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}

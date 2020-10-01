@@ -7,7 +7,7 @@ const Tags = props => (
   <ul className={styles.Tags}>
     {props.tags.map(tag => {
       return (
-        <li>
+        <li key={tag}>
           <small>
             <Link
               key={tag}

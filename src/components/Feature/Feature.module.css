@@ -1,13 +1,13 @@
-.Featured {
+.Feature {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.Featured .featuredItem:not(:last-child) {
+.Feature .featureItem:not(:last-child) {
   margin-bottom: 4rem;
 }
 
-.Featured .featuredTitle {
+.Feature .featureTitle {
   margin: 1rem 0 .75rem 0;
 }

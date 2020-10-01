@@ -3,10 +3,10 @@ import { Link, graphql } from "gatsby"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Layout from "../components/Layout/Layout"
+import SectionWrapper from "../components/Layout/Section/SectionWrapper/SectionWrapper"
 import SEO from "../components/SEO/seo"
 import { rhythm } from "../utils/typography"
 import PostMeta from "../components/PostMeta/PostMeta"
-import { SectionWrapper } from '../components/global-styles'
 
 const Blog = ({ data, location }) => {
   const { title } = useSiteMetadata()
@@ -16,7 +16,7 @@ const Blog = ({ data, location }) => {
       <SEO title="Blog" />
 
       <SectionWrapper>
-        <section className="featuredPosts">
+        <section>
           <h1>Blog</h1>
           {data.allMdx.nodes.map(
             ({ excerpt, frontmatter, fields, timeToRead }) => {
@@ -33,10 +33,7 @@ const Blog = ({ data, location }) => {
                         {title}
                       </Link>
                     </h3>
-                    <PostMeta
-                      frontmatter={frontmatter}
-                      timeToRead={timeToRead}
-                    />
+                    <PostMeta postMetaData={{ frontmatter, timeToRead }} />
                   </header>
                   <section>
                     <p
@@ -75,7 +72,7 @@ export const pageQuery = graphql`
         timeToRead
         frontmatter {
           title
-          date(formatString: "MMMM Do, YYYY")
+          date(formatString: "MMM Do, YYYY")
           tags
         }
         fields {

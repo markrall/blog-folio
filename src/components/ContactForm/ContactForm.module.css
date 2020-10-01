@@ -1,0 +1,61 @@
+.ContactForm {
+  margin: 0 auto;
+}
+
+.ContactForm .formGroup {
+  margin: 1rem 0;
+}
+
+.ContactForm .formLabel {
+  color: darken(var(--color), 50%);
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.ContactForm .textInput {
+  border: 1px solid #333;
+  border-bottom: 3px solid transparent;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1rem;
+  outline: none;
+  width: 100%;
+}
+
+.ContactForm .textInput:focus:invalid {
+  border-bottom: 3px solid rgba(228, 17, 42, 1);
+}
+
+.ContactForm .textInput:focus:valid {
+  border-bottom: 3px solid rgba(63, 162, 84, 1);
+}
+
+.ContactForm .textArea {
+  border: 1px solid #333;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1rem;
+  outline: none;
+  width: 100%;
+}
+
+.ContactForm .formMsg {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  margin-top: 3rem;
+  padding: 1rem 1.5rem;
+}
+
+.ContactForm .formMsg.errorMsg {
+  background-color: var(--color-accent-6);
+  border-color: rgba(228, 17, 42, 1);
+  color: var(--color);
+}
+
+.ContactForm .formMsg.successMsg {
+  background-color: var(--color-accent-7);
+  border-color: rgba(63, 162, 84, 1);
+  color: var(--color);
+}

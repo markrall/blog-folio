@@ -1,26 +1,26 @@
-.FeaturedProjects {
+.FeatureProjects {
   max-width: 63rem;  
   padding: 2.5rem 1.5rem;
 }
 
-.FeaturedProjects > ul {
+.FeatureProjects > ul {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
 }
 
-.FeaturedProjects > ul > li {
+.FeatureProjects > ul > li {
   min-width: 16rem;
   max-width: 19rem;
   margin: 1rem .5rem;
 }
 
-.FeaturedProjects article {
+.FeatureProjects article {
   
 }
 
 @media only screen and (max-width: 420px) {
-  .FeaturedProjects {
+  .FeatureProjects {
     padding: 1.5rem .5rem;
     width: 100%;
   }

@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-import Featured from "../Featured"
+import Feature from '../Feature';
 
-import styles from './FeaturedPosts.module.css';
+import styles from './FeatureProjects.module.css';
 
-const FeaturedPosts = () => {
+const FeatureProjects = () => {
   const data = useStaticQuery(graphql`
     query {
       allMdx(
@@ -13,7 +13,7 @@ const FeaturedPosts = () => {
         filter: {
           frontmatter: {
             published: { eq: true }
-            category: { eq: "post" }
+            category: { eq: "portfolio" }
             featured: { eq: true }
           }
         }
@@ -21,10 +21,11 @@ const FeaturedPosts = () => {
       ) {
         nodes {
           id
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 125)
           timeToRead
           frontmatter {
             title
+            description
             date(formatString: "MMM Do, YYYY")
             cover {
               publicURL
@@ -36,6 +37,8 @@ const FeaturedPosts = () => {
               }
             }
             tags
+            site
+            repo
           }
           fields {
             slug
@@ -46,11 +49,11 @@ const FeaturedPosts = () => {
   `)
 
   return (
-    <section className={styles.FeaturedPosts}>
-      <h2>Featured Posts</h2>
-      <Featured nodes={data.allMdx.nodes} />
+    <section className={styles.FeatureProjects}>
+      <h2>Featured Projects</h2>
+      <Feature nodes={data.allMdx.nodes} />
     </section>
   )
 }
 
-export default FeaturedPosts
+export default FeatureProjects

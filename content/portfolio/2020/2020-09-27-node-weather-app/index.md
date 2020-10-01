@@ -1,7 +1,7 @@
 ---
 title: NodeJS Weather App
 date: "2020-09-27"
-description: "Weather information app built on Node, Express, Mapbox and OpenWeather"
+description: "Weather app using forward and reverse geocoding to fetch the current weather and five day forcast built on Node, Express, Mapbox and OpenWeather."
 cover: ./cover.jpg
 repo: https://github.com/markrall/portfolio-weather-app
 site: https://pure-citadel-53256.herokuapp.com/

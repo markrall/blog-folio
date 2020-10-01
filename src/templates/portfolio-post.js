@@ -4,12 +4,12 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Image from "gatsby-image"
 
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
-import Bio from '../components/Bio/Bio'
 import Layout from "../components/Layout/Layout"
+import SectionWrapper from "../components/Layout/Section/SectionWrapper/SectionWrapper"
 import SEO from "../components/SEO/seo"
+import Bio from "../components/Bio/Bio"
 import { rhythm } from "../utils/typography"
 import PostMeta from "../components/PostMeta/PostMeta"
-import { SectionWrapper } from "../components/global-styles"
 
 export default ({ data, pageContext, location }) => {
   const { title } = useSiteMetadata()
@@ -35,13 +35,13 @@ export default ({ data, pageContext, location }) => {
               <h1
                 style={{
                   marginTop: rhythm(1),
-                  marginBottom: 0,
+                  marginBottom: rhythm(.5),
                 }}
               >
                 {frontmatter.title}
               </h1>
 
-              <PostMeta frontmatter={frontmatter} timeToRead={timeToRead} />
+              <PostMeta postMetaData={{ frontmatter, timeToRead }} />
             </header>
             <MDXRenderer>{body}</MDXRenderer>
             <hr
@@ -62,6 +62,7 @@ export default ({ data, pageContext, location }) => {
                 justifyContent: `space-between`,
                 listStyle: `none`,
                 padding: 0,
+                width: '100'
               }}
             >
               <li>
@@ -95,7 +96,7 @@ export const pageQuery = graphql`
       timeToRead
       frontmatter {
         title
-        date(formatString: "YYYY MMMM Do")
+        date(formatString: "YYYY MMM Do")
         repo
         site
         cover {
