@@ -15,8 +15,6 @@
 } */
 
 :root {
-  --color: var(--color-light);
-  --background: var(--color-dark);  
   --color-dark: rgba(8, 7, 8, 1);
   --color-light: rgba(252, 252, 252, 1);
   --color-accent-1: rgba(130, 2, 99, 1);
@@ -27,6 +25,8 @@
   --color-accent-5:  rgba(232, 232, 232, 1);
   --color-accent-6:  rgba(239, 35, 60, 1);
   --color-accent-7:  rgba(76, 185, 99, 1);
+  --color: var(--color-light);
+  --background: var(--color-dark);  
 
   --gradient-bottom: linear-gradient(180deg, rgba(8, 7, 8, 1), rgba(130, 2, 99, 1), rgba(217, 3, 104, 1), rgba(246, 174, 40, 1));
   --gradient-section-highlight: linear-gradient(45deg, rgba(130, 2, 99, 1), rgba(217, 3, 104, 1));
@@ -41,8 +41,8 @@ html {
 }
 
 body {
-  color: var(--color-dark);
-  background: var(--color-light);
+  color: var(--color);
+  background: var(--background);
   min-width: 330px;
 }
 
