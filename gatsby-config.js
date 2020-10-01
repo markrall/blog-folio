@@ -7,7 +7,7 @@ const config = require("gatsby-plugin-config").default
 
 const siteMetadata = {
   title: `Full-stack JavaScript product developer`,
-  description: `Delightful user experience, built for results, through mordern product design & development.`,
+  description: `Delightful user experience, built for results.`,
   tagline: `I'm a multi-hat front-end developer specialising in the design, build and optimisation of websites and apps.`,
   siteUrl: `https://markrall.dev/`,
   author: {
