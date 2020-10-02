@@ -1,7 +1,8 @@
 import React from "react"
 
 import Tags from './Tags/Tags';
-import { icoGitHub, icoEarth } from "../UI/Icons/Icons";
+import Icons from '../UI/Icons/Icons';
+import SocialIcons from '../Socials/SocialIcons';
 
 import styles from "./PostMeta.module.css";
 
@@ -29,7 +30,7 @@ const PostMeta = props => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {icoGitHub}
+                  <SocialIcons site="github" />
                 </a>
               </small>
             ) : null}
@@ -42,7 +43,7 @@ const PostMeta = props => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {icoEarth}
+                  <Icons label="earth" />
                 </a>
               </small>
             ) : null}

@@ -14,15 +14,6 @@ import List from '../components/UI/List/List';
 import HorizontalList from '../components/UI/List/HorizontalList/HorizontalList';
 import Button from '../components/UI/Button/Button';
 
-import {
-  icoQuill,
-  icoEmbed,
-  icoMeter,
-  icoEnlarge,
-  icoPower,
-  icoHappy,
-} from '../components/UI/Icons/Icons';
-
 export default ({ location }) => {
   const { title, tagline } = useSiteMetadata();
 
@@ -82,7 +73,7 @@ export default ({ location }) => {
           </p>
 
           <div className="cardGroup">
-            <Card title="Research &amp; Design" icon={icoQuill}>
+            <Card title="Research &amp; Design" icon="quill">
               <p>Identify and quantify needs. Qualify and test solutions.</p>
               <List>
                 <li>Market, competitor research</li>
@@ -91,7 +82,7 @@ export default ({ location }) => {
               </List>
             </Card>
 
-            <Card title="Build & Launch" icon={icoEmbed}>
+            <Card title="Build & Launch" icon="embed">
               <p>
                 Build a <abbr title="Minimum Viable Product experiment">MVPe</abbr>.
                 Progressively test and refine for scale.
@@ -113,18 +104,18 @@ export default ({ location }) => {
           </p>
 
           <div className="cardGroup">
-            <Card title="Fast" icon={icoMeter}>
+            <Card title="Fast" icon="meter">
               <p>
                 Fast load times and interactivity are my highest priority.
               </p>
             </Card>
-            <Card title="Responsive" icon={icoEnlarge}>
+            <Card title="Responsive" icon="enlarge">
               <p>Layouts are designed to work on any device, big or small.</p>
             </Card>
-            <Card title="Intuitive" icon={icoHappy}>
+            <Card title="Intuitive" icon="happy">
               <p>Easy to use and intuitive UI that satisfies the customer goal.</p>
             </Card>
-            <Card title="Dynamic" icon={icoPower}>
+            <Card title="Dynamic" icon="power">
               <p>
                 Dynamic UI, content and statement management brings the experience to life.
               </p>

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 
-import styles from './Socials.module.css'
-import { icoLinkedIn, icoGitHub, icoCodePen, icoTwitter, icoInstagram } from '../UI/Icons/Icons';
+import SocialIcons from './SocialIcons';
+import styles from './Socials.module.css';
 
 const Socials = props => {
   const data = useStaticQuery(graphql`
@@ -21,39 +21,61 @@ const Socials = props => {
         }
       }
     }
-  `);
+  `)
 
-  const { social } = data.site.siteMetadata.author;
-  
-  return (
-    <ul className={styles.Socials}>
-      <li className={styles.socialItem}>
-        <a href={`https://www.linkedin.com/in/${social.linkedin}`} target="_blank" rel="noreferrer">
-          {icoLinkedIn}
-        </a>
-      </li>
-      <li className={styles.socialItem}>
-        <a href={`http://github.com/${social.github}`} target="_blank" rel="noreferrer">
-          {icoGitHub}
-        </a>
-      </li>
-      <li className={styles.socialItem}>
-        <a href={`https://codepen.io/${social.codepen}`} target="_blank" rel="noreferrer">
-          {icoCodePen}
-        </a>
-      </li>
-      <li className={styles.socialItem}>
-        <a href={`https://twitter.com/${social.twitter}`} target="_blank" rel="noreferrer">
-          {icoTwitter}
-        </a>
-      </li>
-      <li className={styles.socialItem}>
-        <a href={`https://www.instagram.com/${social.instagram}`} target="_blank" rel="noreferrer">
-          {icoInstagram}
-        </a>
-      </li>
-    </ul>
-  )
+  const socialSites = [
+    {
+      shortname: "linkedin",
+      url: "linkedin.com/in"
+    },
+    {
+      shortname: "github",
+      url: "github.com"
+    },
+    {
+      shortname: "codepen",
+      url: "codepen.io"
+    },
+    {
+      shortname: "twitter",
+      url: "twitter.com"
+    },
+    {
+      shortname: "instagram",
+      url: "instagram.com"
+    },
+    {
+      shortname: "stackoverflow",
+      url: "stackoverflow.com/users"
+    },
+  ];
+
+  const { social } = data.site.siteMetadata.author
+  const socialAccounts = Object.keys(social)
+
+  const socialsList = socialSites.map(site => {
+    let listItem = null
+
+    socialAccounts.forEach(handle => {
+      if (site.shortname === handle) {
+        listItem = (
+          <li key={handle + social[handle]} className={styles.socialItem}>
+            <a
+              href={`https://${site.url}/${social[handle]}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <SocialIcons site={handle} />
+            </a>
+          </li>
+        )
+      }
+    })
+
+    return listItem
+  })
+
+  return <ul className={styles.Socials}>{socialsList}</ul>
 }
 
 export default Socials
